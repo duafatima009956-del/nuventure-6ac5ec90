@@ -20,9 +20,9 @@ const PACKAGES: Record<
     icon: Building2,
   },
   finishing: {
-    label: "Finishing A++ Quality",
+    label: "Grey Structure + Finishing A++ Quality",
     rate: 2400,
-    blurb: "Tiles, paint, woodwork, electrical & plumbing fixtures.",
+    blurb: "Complete turnkey: grey structure with tiles, paint, woodwork, electrical & plumbing.",
     icon: Hammer,
   },
 };
@@ -162,15 +162,6 @@ export function CostCalculator() {
                         <span className={`mt-2 text-[11px] font-bold uppercase tracking-wider ${active ? "text-primary-foreground" : "text-foreground"}`}>
                           {p.label}
                         </span>
-                        {key === "finishing" && (
-                          <span
-                            className={`mt-1 text-[11px] font-semibold ${
-                              active ? "text-accent" : "text-primary"
-                            }`}
-                          >
-                            ₨{p.rate.toLocaleString()}/sqft
-                          </span>
-                        )}
                       </button>
                     );
                   })}
