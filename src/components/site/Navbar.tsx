@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
-import { LiveVisitors } from "@/components/site/LiveVisitors";
+
 
 const logo = "/nuventure-logo.jpg";
 const WHATSAPP = "https://wa.me/923284734463";
