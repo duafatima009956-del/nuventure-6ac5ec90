@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Calculator, X, Phone, MessageCircle, Home, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
 import materialsSpec from "@/assets/nv-materials-spec.jpg.asset.json";
+import greyServices from "@/assets/nv-grey-services.jpg.asset.json";
 
 const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
