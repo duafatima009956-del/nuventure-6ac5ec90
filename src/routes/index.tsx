@@ -4,47 +4,47 @@ import { useEffect, useRef, useState } from "react";
 import { CountOnView } from "@/components/site/CountUpStat";
 import { MovingGallery } from "@/components/site/MovingGallery";
 import { WhyChooseCarousel } from "@/components/site/WhyChooseCarousel";
-import legacyBanner from "@/assets/nv-legacy-banner.jpg.asset.json";
-import greyStructureImg from "@/assets/nv-grey-structure.jpg.asset.json";
 const heroVideo = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/9a174b3e-043d-4b59-9439-20fdef19214b/nv-hero-video.mp4" };
-const ceoImage = { url: "/ceo-adnan-paracha.jpg" };
+const legacyBanner = "/nv-legacy-banner.webp";
+const greyStructureImg = "/nv-grey-structure.webp";
+const ceoImage = "/ceo-adnan-paracha.webp";
 
 const heroSlides = [
   {
-    img: "/nv-hero-1.jpg",
+    img: "/nv-hero-1.webp",
     eyebrow: "Welcome to Nuventure Constructions",
     titleLead: "We build the homes",
     titleAccent: "Pakistan trusts.",
     desc: "A full-service construction firm led by Adnan Javed Paracha — architecture, 3D elevations, grey structure and turnkey delivery across Lahore & Islamabad.",
   },
   {
-    img: "/nv-hero-2.jpg",
+    img: "/nv-hero-2.webp",
     eyebrow: "Modern Architecture · Lahore & Islamabad",
     titleLead: "Designer villas with",
     titleAccent: "photo-real 3D previews.",
     desc: "Approve every elevation, façade and interior in cinematic 3D before we break ground — no surprises, only precision.",
   },
   {
-    img: "/nv-hero-3.jpg",
+    img: "/nv-hero-3.webp",
     eyebrow: "Turnkey Delivery",
     titleLead: "From blueprint",
     titleAccent: "to the keys in your hand.",
     desc: "Architecture, grey structure, finishing and interiors — one accountable team from concept to handover.",
   },
   {
-    img: "/nv-hero-4.jpg",
+    img: "/nv-hero-4.webp",
     eyebrow: "Owner-Supervised Projects",
     titleLead: "Every site personally",
     titleAccent: "led by Adnan Javed Paracha.",
     desc: "Direct oversight, transparent timelines and premium materials — the standard behind 120+ delivered projects.",
   },
 ];
-const g1 = "/nv-1.jpg";
-const g3 = "/nv-3.jpg";
-const g5 = "/nv-5.jpg";
-const g7 = "/nv-7.jpg";
-const g8 = "/nv-8.jpg";
-const g9 = "/nv-9.jpg";
+const g1 = "/nv-1.webp";
+const g3 = "/nv-3.webp";
+const g5 = "/nv-5.webp";
+const g7 = "/nv-7.webp";
+const g8 = "/nv-8.webp";
+const g9 = "/nv-9.webp";
 
 const WHATSAPP = "https://wa.me/923284734463";
 
@@ -53,12 +53,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { Icon: Ruler, img: "/nv-svc-1.jpg", title: "Architecture & Design", desc: "Creative layouts, approved floor plans and construction drawings — a solid blueprint before ground breaking." },
-  { Icon: Building2, img: "/nv-svc-2.jpg", title: "Residential & Commercial", desc: "Luxury homes, villas and commercial plazas built with top-grade materials across Lahore and Islamabad." },
-  { Icon: Layers, img: "/nv-svc-3.jpg", title: "3D Front Elevations", desc: "Photo-realistic 3D elevations — see your project before it takes physical shape." },
-  { Icon: Hammer, img: "/nv-svc-4.jpg", title: "Renovation & Upgrades", desc: "Give old buildings a modern transformation — inside and out, structural to finishing." },
-  { Icon: HardHat, img: "/nv-svc-5.jpg", title: "Project Supervision", desc: "Full oversight from foundation to handover. Timeline control, budget discipline, quality assurance." },
-  { Icon: KeyRound, img: "/nv-svc-6.jpg", title: "Turnkey Delivery", desc: "A complete design-to-handover package. You share the vision, we deliver the keys." },
+  { Icon: Ruler, img: "/nv-svc-1.webp", title: "Architecture & Design", desc: "Creative layouts, approved floor plans and construction drawings — a solid blueprint before ground breaking." },
+  { Icon: Building2, img: "/nv-svc-2.webp", title: "Residential & Commercial", desc: "Luxury homes, villas and commercial plazas built with top-grade materials across Lahore and Islamabad." },
+  { Icon: Layers, img: "/nv-svc-3.webp", title: "3D Front Elevations", desc: "Photo-realistic 3D elevations — see your project before it takes physical shape." },
+  { Icon: Hammer, img: "/nv-svc-4.webp", title: "Renovation & Upgrades", desc: "Give old buildings a modern transformation — inside and out, structural to finishing." },
+  { Icon: HardHat, img: "/nv-svc-5.webp", title: "Project Supervision", desc: "Full oversight from foundation to handover. Timeline control, budget discipline, quality assurance." },
+  { Icon: KeyRound, img: "/nv-svc-6.webp", title: "Turnkey Delivery", desc: "A complete design-to-handover package. You share the vision, we deliver the keys." },
 ];
 
 const whyUs = [
@@ -353,7 +353,7 @@ function Index() {
               <span className="pointer-events-none absolute bottom-0 left-0 z-[3] h-10 w-10 rounded-bl-[1.5rem] border-b-2 border-l-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <span className="pointer-events-none absolute bottom-0 right-0 z-[3] h-10 w-10 rounded-br-[1.5rem] border-b-2 border-r-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <img
-                src={ceoImage.url}
+                src={ceoImage}
                 alt="Adnan Javed Paracha — CEO, Nuventure Constructions"
                 loading="lazy"
                 decoding="async"
@@ -412,7 +412,7 @@ function Index() {
           {/* Poster */}
           <div className="group relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]">
             <img
-              src={legacyBanner.url}
+              src={legacyBanner}
               alt="Nuventure Constructions — Don't just build a house, build your legacy"
               loading="lazy"
               decoding="async"
@@ -489,7 +489,7 @@ function Index() {
           {/* Reference image */}
           <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_25px_60px_-30px_rgba(0,0,0,0.55)] lg:sticky lg:top-24">
             <img
-              src={greyStructureImg.url}
+              src={greyStructureImg}
               alt="Nuventure Constructions grey structure scope of work"
               loading="lazy"
               decoding="async"
