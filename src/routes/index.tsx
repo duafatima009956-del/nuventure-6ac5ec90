@@ -395,6 +395,165 @@ function Index() {
       </section>
 
 
+      {/* Build Your Legacy — Banner CTA */}
+      <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="flex justify-center"><Eyebrow>Build Your Legacy</Eyebrow></div>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Don't just build a house —
+            <span className="text-accent"> build a legacy.</span>
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Premium quality, unmatched strength and modern design — engineered to stand strong for generations.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-stretch">
+          {/* Poster */}
+          <div className="group relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]">
+            <img
+              src={legacyBanner.url}
+              alt="Nuventure Constructions — Don't just build a house, build your legacy"
+              loading="lazy"
+              decoding="async"
+              className="block h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
+
+          {/* Highlights */}
+          <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 sm:p-9">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                <Sparkles className="h-3.5 w-3.5" /> Grey Structure
+              </div>
+              <div className="mt-5 flex items-end gap-2">
+                <span className="text-5xl font-extrabold tracking-tight sm:text-6xl">Rs. 2,600</span>
+                <span className="mb-2 text-sm font-medium text-muted-foreground">/ sq.ft</span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                A transparent starting rate for premium-grade grey structure — no hidden costs, no compromises on material or workmanship.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-sm sm:text-base">
+                {[
+                  "Premium quality construction",
+                  "High-strength grey structure",
+                  "Modern design & engineering standards",
+                  "Transparent project execution",
+                  "On-time delivery, every milestone",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                      <Check className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-foreground/90">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-transform hover:-translate-y-0.5"
+              >
+                <Phone className="h-4 w-4" /> Talk about your dream home
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent/10"
+              >
+                Book a consultation <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Grey Structure — Detailed Scope */}
+      <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="flex justify-center"><Eyebrow>Grey Structure · Our Services</Eyebrow></div>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Shape your dreams into reality
+            <span className="text-accent"> with absolute trust.</span>
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Premium craftsmanship · solid grounding · built for generations. Every phase — from foundation excavation to the final roof — executed under strict quality control with industry-approved materials and specialist engineers.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          {/* Reference image */}
+          <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_25px_60px_-30px_rgba(0,0,0,0.55)] lg:sticky lg:top-24">
+            <img
+              src={greyStructureImg.url}
+              alt="Nuventure Constructions grey structure scope of work"
+              loading="lazy"
+              decoding="async"
+              className="block h-full w-full object-cover"
+            />
+          </div>
+
+          {/* Scope list */}
+          <div className="rounded-3xl border border-border/70 bg-card/60 p-6 backdrop-blur sm:p-8">
+            <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+              {[
+                "Deep foundation digging up to 3 ft with premium Class-A bricks",
+                "Solid concrete base laying for foundations",
+                "RCC plinth beam compaction with high-grade pit sand (ghasu)",
+                "Master brickwork with top-tier first-class bricks",
+                "Flawless internal & external plaster finish",
+                "Heavy-duty iron shuttering installation",
+                "Structural steel rebar (6×7) mesh with 3-sootr & 4-sootr reinforcement",
+                "Premium cement — Maple Leaf, D.G., Mughal Supreme; FF Steel Grade-60",
+                "High-density Sargodha & Margalla crushed stone (bajri)",
+                "Durable brand-name plumbing pipelines",
+                "Fine-grade Chenab river sand",
+                "Secure boundary wall construction",
+                "5-inch RCC lintel slab casting at precise 1:2:4 ratio",
+                "High-grade electrical conduit pipe network",
+                "Wall plastering at exact 1:4 cement–sand ratio",
+                "Premium sanitary & sewerage drainage lines",
+                "Floor base (kacha) leveling with 1:2:4 PCC mix thickness",
+                "Advanced termite control chemical treatment",
+                "3 ft parapet boundary wall above roof level",
+                "Roof tiling with specialised water-resistant coating",
+                "Galvanised iron door frames (chaukhat)",
+                "Reinforced concrete kitchen counter slabs",
+                "Heavy-gauge 3-sootr steel safety window grills",
+                "Robust 14/16 gauge customised main gate",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <ShieldCheck className="h-3 w-3" />
+                  </span>
+                  <p className="text-sm leading-relaxed text-foreground/90">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/5 p-5 sm:p-6">
+              <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
+                Plans show intent. Renders prove experience. What truly matters is how everything comes together to shape the way you live — <span className="italic">zones, circulation, massing, façade rhythm, materials, landscape and lighting,</span> each decision crafted with purpose.
+              </p>
+              <ul className="mt-5 grid gap-2 text-sm text-foreground/90 sm:grid-cols-2">
+                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Privacy exactly where you need it</li>
+                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Framed views that elevate daily living</li>
+                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Natural daylight flowing throughout</li>
+                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> A seamless, connected spatial experience</li>
+              </ul>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                A dedicated civil engineer is deployed to every project, with the wider Nuventure team supporting 24/7 — so the finished home feels refined, functional and truly personal from day one.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <div className="mt-20 sm:mt-28">
         <MovingGallery />
       </div>
