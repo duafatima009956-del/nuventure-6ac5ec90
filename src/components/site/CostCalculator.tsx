@@ -38,6 +38,7 @@ function formatPkr(n: number) {
 export function CostCalculator() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [showSpec, setShowSpec] = useState(false);
   const [pkg, setPkg] = useState<PackageKey>("grey");
   const [area, setArea] = useState<number>(1500);
 
