@@ -54,7 +54,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <LiveVisitors />
           <a
             href={WHATSAPP}
             target="_blank"
@@ -78,10 +77,6 @@ export function Navbar() {
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
-
-      <div className="mx-auto flex w-[min(1200px,calc(100%-2rem))] justify-center pb-3 lg:hidden">
-        <LiveVisitors />
       </div>
 
       {open && (

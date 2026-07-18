@@ -41,7 +41,7 @@ export function LiveVisitors({ className = "" }: { className?: string }) {
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
       </span>
       <span className="tabular-nums">{count}</span>
-      <span className="text-muted-foreground">viewing now</span>
+      <span className="text-muted-foreground">visitors on site</span>
     </div>
   );
 }
