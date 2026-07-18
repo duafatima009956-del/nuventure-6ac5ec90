@@ -79,14 +79,14 @@ function AboutPage() {
       <section className="border-b border-border/60 bg-secondary/30">
         <div className="mx-auto grid w-[min(1200px,calc(100%-2rem))] grid-cols-2 gap-6 py-12 sm:grid-cols-4">
           {[
-            { n: 120, s: "+", l: "Projects Delivered" },
-            { n: 10, s: "+", l: "Years of Excellence" },
-            { n: 2, s: "", l: "Major Cities" },
-            { n: 100, s: "%", l: "Owner Supervised" },
+            { v: "120+", l: "Projects Delivered" },
+            { v: "10+", l: "Years of Excellence" },
+            { v: "2", l: "Major Cities" },
+            { v: "100%", l: "Owner Supervised" },
           ].map((s) => (
             <div key={s.l} className="text-center">
               <div className="text-4xl font-black text-accent sm:text-5xl">
-                <CountOnView end={s.n} suffix={s.s} />
+                <CountOnView value={s.v} />
               </div>
               <div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{s.l}</div>
             </div>
