@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
+import { LiveVisitors } from "@/components/site/LiveVisitors";
 
 const logo = "/nuventure-logo.jpg";
 const WHATSAPP = "https://wa.me/923284734463";
@@ -53,6 +54,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LiveVisitors />
           <a
             href={WHATSAPP}
             target="_blank"
@@ -76,6 +78,10 @@ export function Navbar() {
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+      </div>
+
+      <div className="mx-auto flex w-[min(1200px,calc(100%-2rem))] justify-center pb-3 lg:hidden">
+        <LiveVisitors />
       </div>
 
       {open && (

@@ -7,7 +7,7 @@ function randomCount() {
   return Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
 }
 
-export function LiveVisitors() {
+export function LiveVisitors({ className = "" }: { className?: string }) {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export function LiveVisitors() {
 
   return (
     <div
-      className="fixed left-1/2 top-20 z-[130] flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-black/80 px-3 py-1.5 text-xs font-medium text-white shadow-lg backdrop-blur-md sm:left-4 sm:top-24 sm:translate-x-0"
+      className={`inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-400/35 bg-emerald-500/15 px-3 py-1.5 text-[11px] font-semibold text-foreground shadow-sm backdrop-blur-md ${className}`}
       role="status"
       aria-live="polite"
     >
@@ -41,7 +41,7 @@ export function LiveVisitors() {
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
       </span>
       <span className="tabular-nums">{count}</span>
-      <span className="text-white/70">viewing now</span>
+      <span className="text-muted-foreground">viewing now</span>
     </div>
   );
 }
