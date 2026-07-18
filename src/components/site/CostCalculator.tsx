@@ -167,13 +167,15 @@ export function CostCalculator() {
                         <span className={`mt-2 text-[11px] font-bold uppercase tracking-wider ${active ? "text-primary-foreground" : "text-foreground"}`}>
                           {p.label}
                         </span>
-                        <span
-                          className={`mt-1 text-[11px] font-semibold ${
-                            active ? "text-accent" : "text-primary"
-                          }`}
-                        >
-                          ₨{p.rate.toLocaleString()}/sqft
-                        </span>
+                        {key === "finishing" && (
+                          <span
+                            className={`mt-1 text-[11px] font-semibold ${
+                              active ? "text-accent" : "text-primary"
+                            }`}
+                          >
+                            ₨{p.rate.toLocaleString()}/sqft
+                          </span>
+                        )}
                       </button>
                     );
                   })}
