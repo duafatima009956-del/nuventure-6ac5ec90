@@ -135,7 +135,7 @@ export function CostCalculator() {
                 <label className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
                   Select Package
                 </label>
-                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {(Object.keys(PACKAGES) as PackageKey[]).map((key) => {
                     const p = PACKAGES[key];
                     const Icon = p.icon;
