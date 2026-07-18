@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const logo = "/nuventure-logo.webp";
+const logo = "/nuventure-logo-visible.webp";
 
 const images = [
   { src: "/ongoing-29.webp", alt: "Ongoing luxury villa — twilight elevation" },

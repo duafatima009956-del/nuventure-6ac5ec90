@@ -109,7 +109,7 @@ export function CostCalculator() {
               <div className="flex items-start gap-3">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 ring-2 ring-accent/60 shadow-lg sm:h-16 sm:w-16">
                   <img
-                    src="/nuventure-logo.webp"
+                    src="/nuventure-logo-visible.webp"
                     alt="Nuventure Constructions logo"
                     className="h-full w-full object-contain"
                     loading="eager"
