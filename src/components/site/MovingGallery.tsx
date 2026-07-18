@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import confetti from "canvas-confetti";
-const logo = "/nuventure-logo.jpg";
-const g1 = "/nv-1.jpg";
-const g2 = "/nv-2.jpg";
-const g3 = "/nv-3.jpg";
-const g4 = "/nv-4.jpg";
-const g5 = "/nv-5.jpg";
-const g6 = "/nv-6.jpg";
-const g7 = "/nv-7.jpg";
-const g8 = "/nv-8.jpg";
-const g9 = "/nv-9.jpg";
+const logo = "/nuventure-logo.webp";
+const g1 = "/nv-1.webp";
+const g2 = "/nv-2.webp";
+const g3 = "/nv-3.webp";
+const g4 = "/nv-4.webp";
+const g5 = "/nv-5.webp";
+const g6 = "/nv-6.webp";
+const g7 = "/nv-7.webp";
+const g8 = "/nv-8.webp";
+const g9 = "/nv-9.webp";
 
 const images = [
   { src: g1, alt: "Modern villa under construction" },
@@ -200,6 +200,7 @@ export function MovingGallery() {
             <img
               src={images[lightbox].src}
               alt={images[lightbox].alt}
+              decoding="async"
               className="mx-auto max-h-[85vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl animate-magic-pop"
             />
             <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
