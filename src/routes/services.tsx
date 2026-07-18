@@ -163,7 +163,7 @@ function ServicesPage() {
               className="shine-box group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-2xl hover:shadow-accent/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={img} alt={title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={img} alt={title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-accent/50 bg-background/80 text-accent backdrop-blur">
                   <Icon className="h-5 w-5" />

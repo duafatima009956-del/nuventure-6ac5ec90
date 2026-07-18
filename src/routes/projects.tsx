@@ -109,7 +109,7 @@ function ShowcaseVideo({ src }: { src: string }) {
           className="block h-auto w-full"
         />
         <div className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-          <img src={logo} alt="" aria-hidden="true" className="h-6 w-6 object-contain" />
+          <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
           <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
         </div>
         <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 transition-opacity duration-500 group-hover:opacity-100 opacity-70" />
@@ -152,7 +152,7 @@ function ProjectsPage() {
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" className="h-6 w-6 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
               <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-4 pt-10 opacity-0 transition-opacity group-hover:opacity-100">
@@ -177,7 +177,7 @@ function ProjectsPage() {
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" className="h-6 w-6 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
               <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-4 pt-10 opacity-0 transition-opacity group-hover:opacity-100">

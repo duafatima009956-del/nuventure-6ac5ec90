@@ -46,7 +46,7 @@ function AboutPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Modern villa by Nuventure Constructions" className="h-full w-full object-cover opacity-25" />
+          <img src={heroImg} alt="Modern villa by Nuventure Constructions" loading="eager" decoding="async" fetchPriority="high" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="relative mx-auto w-[min(1200px,calc(100%-2rem))] py-20 sm:py-28">
