@@ -181,15 +181,33 @@ export function CostCalculator() {
                   })}
                 </div>
                 <p className="mt-2 text-xs font-medium text-foreground/80">{PACKAGES[pkg].blurb}</p>
-                <button
-                  type="button"
-                  onClick={() => setShowSpec(true)}
-                  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-accent/60 bg-accent/10 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary transition-all hover:bg-accent/20 hover:border-accent hover:shadow-md"
-                >
-                  <FileText className="h-4 w-4 text-accent" />
-                  View Silver / Gold / Platinum Materials
-                  <ZoomIn className="h-3.5 w-3.5 opacity-60" />
-                </button>
+                <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowSpec("grey")}
+                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary-foreground shadow-lg ring-2 ring-accent/60 transition-all hover:scale-[1.02] hover:shadow-xl"
+                  >
+                    <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-accent/70" />
+                    <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-full" />
+                    <FileText className="relative h-4 w-4 text-accent" />
+                    <span className="relative">Grey A++ Material</span>
+                    <ZoomIn className="relative h-3.5 w-3.5 text-accent" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowSpec("turnkey")}
+                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent via-amber-400 to-accent px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary shadow-lg ring-2 ring-primary/40 transition-all hover:scale-[1.02] hover:shadow-xl"
+                  >
+                    <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-primary/50" />
+                    <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/40 blur-md transition-all duration-700 group-hover:left-full" />
+                    <FileText className="relative h-4 w-4 text-primary" />
+                    <span className="relative">Grey + Finishing A++</span>
+                    <ZoomIn className="relative h-3.5 w-3.5 text-primary" />
+                  </button>
+                </div>
+                <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-accent animate-pulse">
+                  ↑ Tap to view detailed material specification ↑
+                </p>
               </div>
 
               {/* Area input */}
