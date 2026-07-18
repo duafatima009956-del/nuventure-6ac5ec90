@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-const projectVideoAsset = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/2832a8ea-45a8-4e74-9658-7f45be75fbb0/nv-project-video.mp4" };
-const projectVideo2Asset = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/0eae870f-2d22-4e4b-9c8c-df884f97ecc7/nv-project-video-2.mp4" };
+const projectVideoAsset = { url: "/nv-project-video.mp4" };
+const projectVideo2Asset = { url: "/nv-project-video-2.mp4" };
 import { OngoingProjects } from "@/components/site/OngoingProjects";
 
 const logo = "/nuventure-logo.webp";
