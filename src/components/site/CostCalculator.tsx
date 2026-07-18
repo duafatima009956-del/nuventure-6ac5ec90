@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Calculator, X, Phone, MessageCircle, Home, Hammer, Building2 } from "lucide-react";
+import { Calculator, X, Phone, MessageCircle, Home, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
+import materialsSpec from "@/assets/nv-materials-spec.jpg.asset.json";
 
 const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
@@ -11,19 +12,19 @@ const PACKAGES: Record<
   { label: string; rate: number; blurb: string; icon: React.ComponentType<{ className?: string }> }
 > = {
   grey: {
-    label: "Grey Structure",
+    label: "Grey Structure A++",
     rate: 2600,
     blurb: "60-grade steel, RCC structure, foundation, brickwork & plaster.",
     icon: Building2,
   },
   finishing: {
-    label: "Finishing",
+    label: "Finishing A++",
     rate: 2400,
     blurb: "Tiles, paint, woodwork, electrical & plumbing fixtures.",
     icon: Hammer,
   },
   turnkey: {
-    label: "Turnkey (Grey + Finishing)",
+    label: "Turnkey A++ (Grey + Finishing)",
     rate: 5000,
     blurb: "Complete ready-to-move-in home, premium materials, on-time delivery.",
     icon: Home,
@@ -37,6 +38,7 @@ function formatPkr(n: number) {
 export function CostCalculator() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [showSpec, setShowSpec] = useState(false);
   const [pkg, setPkg] = useState<PackageKey>("grey");
   const [area, setArea] = useState<number>(1500);
 
@@ -176,6 +178,15 @@ export function CostCalculator() {
                   })}
                 </div>
                 <p className="mt-2 text-xs font-medium text-foreground/80">{PACKAGES[pkg].blurb}</p>
+                <button
+                  type="button"
+                  onClick={() => setShowSpec(true)}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-accent/60 bg-accent/10 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary transition-all hover:bg-accent/20 hover:border-accent hover:shadow-md"
+                >
+                  <FileText className="h-4 w-4 text-accent" />
+                  View Silver / Gold / Platinum Materials
+                  <ZoomIn className="h-3.5 w-3.5 opacity-60" />
+                </button>
               </div>
 
               {/* Area input */}
@@ -262,6 +273,44 @@ export function CostCalculator() {
                 * Estimates are indicative. Final cost depends on design, site conditions & material
                 selection.
               </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showSpec && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Materials specification"
+          onClick={() => setShowSpec(false)}
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-black/90 px-3 py-6 backdrop-blur-md animate-fade-in"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative my-auto w-[min(900px,100%)] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-accent/40 animate-scale-in"
+          >
+            <button
+              onClick={() => setShowSpec(false)}
+              aria-label="Close"
+              className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition hover:scale-110 hover:bg-black/90"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="bg-primary px-5 py-3 text-primary-foreground">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                Nuventure Constructions
+              </p>
+              <h3 className="text-base font-black sm:text-lg">
+                Materials Specification — Silver · Gold · Platinum
+              </h3>
+            </div>
+            <div className="max-h-[75vh] overflow-y-auto bg-white">
+              <img
+                src={materialsSpec.url}
+                alt="Nuventure Constructions materials specification: Silver, Gold and Platinum packages"
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
