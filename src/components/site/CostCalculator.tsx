@@ -180,7 +180,7 @@ export function CostCalculator() {
                   <button
                     type="button"
                     onClick={() => setShowSpec("grey")}
-                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary-foreground shadow-lg ring-2 ring-accent/60 transition-all hover:scale-[1.02] hover:shadow-xl"
+                    className="animate-attention-shake group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary-foreground shadow-lg ring-2 ring-accent/60 transition-all hover:scale-[1.02] hover:shadow-xl"
                   >
                     <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-accent/70" />
                     <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-full" />
@@ -191,7 +191,8 @@ export function CostCalculator() {
                   <button
                     type="button"
                     onClick={() => setShowSpec("turnkey")}
-                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent via-amber-400 to-accent px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary shadow-lg ring-2 ring-primary/40 transition-all hover:scale-[1.02] hover:shadow-xl"
+                    className="animate-attention-shake group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent via-amber-400 to-accent px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary shadow-lg ring-2 ring-primary/40 transition-all hover:scale-[1.02] hover:shadow-xl"
+                    style={{ animationDelay: "0.4s" }}
                   >
                     <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-primary/50" />
                     <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/40 blur-md transition-all duration-700 group-hover:left-full" />
@@ -200,9 +201,6 @@ export function CostCalculator() {
                     <ZoomIn className="relative h-3.5 w-3.5 text-primary" />
                   </button>
                 </div>
-                <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-accent animate-pulse">
-                  ↑ Tap to view detailed material specification ↑
-                </p>
               </div>
 
               {/* Area input */}
