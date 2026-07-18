@@ -4,7 +4,7 @@ const projectVideoAsset = { url: "/nv-project-video.mp4" };
 const projectVideo2Asset = { url: "/nv-project-video-2.mp4" };
 import { OngoingProjects } from "@/components/site/OngoingProjects";
 
-const logo = "/nuventure-logo.webp";
+const logo = "/nuventure-logo-visible.webp";
 
 const gallery = [
   { src: "/nv-1.webp", alt: "Modern 3D front elevation render · Lahore" },

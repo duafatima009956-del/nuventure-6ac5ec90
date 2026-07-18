@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 
 
-const logo = "/nuventure-logo.webp";
+const logo = "/nuventure-logo-visible.webp";
 const WHATSAPP = "https://wa.me/923284734463";
 
 

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone, User } from "lucide-react";
 import { SocialIcons } from "@/components/site/SocialIcons";
 
-const logo = "/nuventure-logo.webp";
+const logo = "/nuventure-logo-visible.webp";
 const WHATSAPP = "https://wa.me/923284734463";
 
 export function Footer() {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import confetti from "canvas-confetti";
-const logo = "/nuventure-logo.webp";
+const logo = "/nuventure-logo-visible.webp";
 const g1 = "/nv-1.webp";
 const g2 = "/nv-2.webp";
 const g3 = "/nv-3.webp";
