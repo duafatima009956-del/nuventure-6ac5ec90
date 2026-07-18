@@ -18,6 +18,7 @@ import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { OfferPopup } from "@/components/site/OfferPopup";
 import { CostCalculator } from "@/components/site/CostCalculator";
 import { SplashIntro } from "@/components/site/SplashIntro";
+import { LiveVisitors } from "@/components/site/LiveVisitors";
 
 function NotFoundComponent() {
   return (
@@ -211,6 +212,7 @@ function RootComponent() {
         {!isGate && splashDone && <WhatsAppFloat />}
         {!isGate && splashDone && <OfferPopup />}
         {!isGate && splashDone && <CostCalculator />}
+        {!isGate && splashDone && <LiveVisitors />}
       </div>
     </QueryClientProvider>
   );
