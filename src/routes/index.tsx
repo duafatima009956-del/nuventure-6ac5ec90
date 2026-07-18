@@ -372,20 +372,20 @@ function Index() {
             <div className="relative">
               <div className="text-6xl font-serif leading-none text-accent/60">“</div>
               <p className="mt-2 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                When I founded Nuventure Constructions, I set out to build more than houses — I wanted to build a name our clients could trust with their life's biggest investment. Every wall we raise, every finish we approve and every timeline we commit to is a promise kept.
+                At Nuventure, we don't just construct buildings — we shape the spaces where families grow, businesses rise and legacies are built. For me, every project begins with a single question: <span className="italic text-foreground">would I be proud to hand these keys to my own family?</span> If the answer isn't an unhesitating yes, the work isn't finished.
               </p>
               <p className="mt-4 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                Our team brings together architects, engineers and craftsmen who share one belief: quality is not a feature, it is the foundation. From your first 3D preview to the day we hand over the keys, you will always know exactly where your project stands.
+                Over the years we have grown from a small, determined team into a trusted name across Pakistan — powered by architects, engineers and craftsmen who treat precision as a discipline and integrity as a standard. Timelines are honoured. Budgets are respected. Quality is never negotiated.
               </p>
               <p className="mt-4 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                Thank you for considering Nuventure. It would be a privilege to build with you.
+                When you choose Nuventure, you are not hiring a contractor — you are partnering with a team that will stand beside your vision from the first sketch to the final handover. That is my personal promise to every client who walks through our door.
               </p>
-              <div className="mt-6 flex items-center gap-3">
+              <div className="mt-8 flex items-center gap-3">
                 <span className="h-px w-10 bg-accent/60" />
-                <p className="text-sm font-semibold">
-                  <span className="text-accent">Adnan Javed Paracha</span>
-                  <span className="text-muted-foreground"> — Founder & CEO, Nuventure Constructions</span>
-                </p>
+                <div>
+                  <p className="text-sm font-semibold text-accent">Adnan Javed Paracha</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder & CEO · Nuventure Constructions</p>
+                </div>
               </div>
             </div>
           </article>
