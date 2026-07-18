@@ -137,7 +137,7 @@ export function OngoingProjects() {
             />
             <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" draggable={false} className="h-5 w-5 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" draggable={false} className="h-5 w-5 object-contain" />
               <span className="text-[9px] font-black uppercase tracking-widest text-accent">Nuventure</span>
             </div>
             <div className="pointer-events-none absolute right-2 top-2 rounded-md bg-accent/90 px-2 py-1 text-[9px] font-black uppercase tracking-widest text-accent-foreground shadow-md">

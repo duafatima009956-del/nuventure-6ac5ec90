@@ -163,7 +163,7 @@ export function MovingGallery() {
             <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             {/* Corner watermark badge */}
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" draggable={false} className="h-5 w-5 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" draggable={false} className="h-5 w-5 object-contain" />
               <span className="text-[9px] font-black uppercase tracking-widest text-accent">Nuventure</span>
             </div>
           </button>
@@ -204,7 +204,7 @@ export function MovingGallery() {
               className="mx-auto max-h-[85vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl animate-magic-pop"
             />
             <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" className="h-6 w-6 object-contain" />
+              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
               <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
             </div>
             <p className="mt-3 text-center text-sm text-white/80">{images[lightbox].alt}</p>
