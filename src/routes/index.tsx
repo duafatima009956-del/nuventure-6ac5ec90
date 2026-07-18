@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { CountOnView } from "@/components/site/CountUpStat";
 import { MovingGallery } from "@/components/site/MovingGallery";
 import { WhyChooseCarousel } from "@/components/site/WhyChooseCarousel";
-const heroVideo = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/9a174b3e-043d-4b59-9439-20fdef19214b/nv-hero-video.mp4" };
+const heroVideo = { url: "/nv-hero-video.mp4" };
 const legacyBanner = "/nv-legacy-banner.webp";
 const greyStructureImg = "/nv-grey-structure.webp";
 const ceoImage = "/ceo-adnan-paracha.webp";
