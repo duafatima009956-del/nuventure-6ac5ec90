@@ -345,3 +345,18 @@ img { border-radius: 0.75rem; }
   color: var(--accent);
 }
 
+
+@keyframes attention-shake {
+  0%, 92%, 100% { transform: translateX(0) rotate(0deg); }
+  93% { transform: translateX(-3px) rotate(-1.2deg); }
+  94% { transform: translateX(3px) rotate(1.2deg); }
+  95% { transform: translateX(-3px) rotate(-1deg); }
+  96% { transform: translateX(3px) rotate(1deg); }
+  97% { transform: translateX(-2px) rotate(-0.6deg); }
+  98% { transform: translateX(2px) rotate(0.6deg); }
+  99% { transform: translateX(0) rotate(0deg); }
+}
+.animate-attention-shake {
+  animation: attention-shake 3.2s ease-in-out infinite;
+  transform-origin: center;
+}
