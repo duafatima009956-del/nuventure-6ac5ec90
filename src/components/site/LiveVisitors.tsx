@@ -32,7 +32,7 @@ export function LiveVisitors({ className = "" }: { className?: string }) {
 
   return (
     <div
-      className={`inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-400/35 bg-emerald-500/15 px-3 py-1.5 text-[11px] font-semibold text-foreground shadow-sm backdrop-blur-md ${className}`}
+      className={`fixed bottom-24 left-5 z-[110] inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-400/40 bg-background/90 px-3 py-1.5 text-[11px] font-semibold text-foreground shadow-lg backdrop-blur-md sm:bottom-28 sm:left-6 ${className}`}
       role="status"
       aria-live="polite"
     >
@@ -41,7 +41,7 @@ export function LiveVisitors({ className = "" }: { className?: string }) {
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
       </span>
       <span className="tabular-nums">{count}</span>
-      <span className="text-muted-foreground">viewing now</span>
+      <span className="text-muted-foreground">visitors on site</span>
     </div>
   );
 }
