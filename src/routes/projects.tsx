@@ -1,21 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-const projectVideoAsset = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/2832a8ea-45a8-4e74-9658-7f45be75fbb0/nv-project-video.mp4" };
-const projectVideo2Asset = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/0eae870f-2d22-4e4b-9c8c-df884f97ecc7/nv-project-video-2.mp4" };
+const projectVideoAsset = { url: "/nv-project-video.mp4" };
+const projectVideo2Asset = { url: "/nv-project-video-2.mp4" };
 import { OngoingProjects } from "@/components/site/OngoingProjects";
 
-const logo = "/nuventure-logo.jpg";
+const logo = "/nuventure-logo.webp";
 
 const gallery = [
-  { src: "/nv-1.jpg", alt: "Modern 3D front elevation render · Lahore" },
-  { src: "/nv-9.jpg", alt: "Double-story bungalow 3D visualization · Islamabad" },
-  { src: "/nv-2.jpg", alt: "Contemporary luxury villa exterior · Faisal Town" },
-  { src: "/nv-3.jpg", alt: "Luxury villa at night with landscape lighting · DHA" },
-  { src: "/nv-4.jpg", alt: "Modern commercial plaza · Ferozepur Road, Lahore" },
-  { src: "/nv-7.jpg", alt: "Aerial view of modern housing development" },
-  { src: "/nv-5.jpg", alt: "Luxury marble living room interior" },
-  { src: "/nv-8.jpg", alt: "Designer kitchen with marble & wood finishes" },
-  { src: "/nv-6.jpg", alt: "Active construction site — grey structure" },
+  { src: "/nv-1.webp", alt: "Modern 3D front elevation render · Lahore" },
+  { src: "/nv-9.webp", alt: "Double-story bungalow 3D visualization · Islamabad" },
+  { src: "/nv-2.webp", alt: "Contemporary luxury villa exterior · Faisal Town" },
+  { src: "/nv-3.webp", alt: "Luxury villa at night with landscape lighting · DHA" },
+  { src: "/nv-4.webp", alt: "Modern commercial plaza · Ferozepur Road, Lahore" },
+  { src: "/nv-7.webp", alt: "Aerial view of modern housing development" },
+  { src: "/nv-5.webp", alt: "Luxury marble living room interior" },
+  { src: "/nv-8.webp", alt: "Designer kitchen with marble & wood finishes" },
+  { src: "/nv-6.webp", alt: "Active construction site — grey structure" },
 ];
 
 export const Route = createFileRoute("/projects")({
@@ -148,6 +148,7 @@ function ProjectsPage() {
               src={img.src}
               alt={img.alt}
               loading="lazy"
+                decoding="async"
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
@@ -172,6 +173,7 @@ function ProjectsPage() {
               src={img.src}
               alt={img.alt}
               loading="lazy"
+                decoding="async"
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">

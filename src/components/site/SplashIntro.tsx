@@ -43,9 +43,10 @@ export function SplashIntro({ onDone }: { onDone?: () => void }) {
       <div className="nv-splash-stage">
         <div className="nv-splash-mark">
           <img
-            src="/nuventure-logo-splash-centered.png"
+            src="/nuventure-logo-splash-centered.webp"
             alt="Nuventure Constructions"
             draggable={false}
+            decoding="async"
             className="nv-splash-logo select-none"
           />
         </div>

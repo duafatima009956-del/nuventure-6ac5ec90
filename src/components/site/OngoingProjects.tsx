@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const logo = "/nuventure-logo.jpg";
+const logo = "/nuventure-logo.webp";
 
 const images = [
-  { src: "/ongoing-29.jpg", alt: "Ongoing luxury villa — twilight elevation" },
-  { src: "/ongoing-30.jpg", alt: "Ongoing luxury villa — arched façade" },
-  { src: "/ongoing-31.jpg", alt: "Ongoing luxury villa — corner perspective" },
-  { src: "/ongoing-32.jpg", alt: "Ongoing luxury villa — daytime elevation" },
+  { src: "/ongoing-29.webp", alt: "Ongoing luxury villa — twilight elevation" },
+  { src: "/ongoing-30.webp", alt: "Ongoing luxury villa — arched façade" },
+  { src: "/ongoing-31.webp", alt: "Ongoing luxury villa — corner perspective" },
+  { src: "/ongoing-32.webp", alt: "Ongoing luxury villa — daytime elevation" },
 ];
 
 const track = [...images, ...images];
@@ -177,6 +177,7 @@ export function OngoingProjects() {
             <img
               src={images[lightbox].src}
               alt={images[lightbox].alt}
+              decoding="async"
               className="mx-auto max-h-[85vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
             />
             <p className="mt-3 text-center text-sm text-white/80">{images[lightbox].alt}</p>

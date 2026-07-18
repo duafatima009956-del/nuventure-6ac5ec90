@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Phone } from "lucide-react";
-const POPUP_IMG = "/nv-offer-popup.jpg";
+const POPUP_IMG = "/nv-offer-popup.webp";
 
 const STORAGE_KEY = "nuventure-welcome-seen-v2";
 const WHATSAPP = "tel:+923284734463";

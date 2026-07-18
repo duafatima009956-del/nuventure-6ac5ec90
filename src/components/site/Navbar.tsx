@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 
 
-const logo = "/nuventure-logo.jpg";
+const logo = "/nuventure-logo.webp";
 const WHATSAPP = "https://wa.me/923284734463";
 
 
@@ -27,6 +27,8 @@ export function Navbar() {
           <img
             src={logo}
             alt="Nuventure Constructions logo"
+            loading="eager"
+            decoding="async"
             className="h-11 w-11 object-contain"
           />
           <span className="leading-tight">
