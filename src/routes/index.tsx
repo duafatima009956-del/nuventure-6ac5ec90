@@ -1,9 +1,11 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Building2, HardHat, Ruler, Hammer, Layers, KeyRound, MapPin, Phone, Target, Eye, Gem, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, HardHat, Ruler, Hammer, Layers, KeyRound, MapPin, Phone, Target, Eye, Gem, Check, ShieldCheck, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CountOnView } from "@/components/site/CountUpStat";
 import { MovingGallery } from "@/components/site/MovingGallery";
 import { WhyChooseCarousel } from "@/components/site/WhyChooseCarousel";
+import legacyBanner from "@/assets/nv-legacy-banner.jpg.asset.json";
+import greyStructureImg from "@/assets/nv-grey-structure.jpg.asset.json";
 const heroVideo = { url: "https://project--c3006114-6dee-491f-bb88-24bea212c6ef.lovable.app/__l5e/assets-v1/9a174b3e-043d-4b59-9439-20fdef19214b/nv-hero-video.mp4" };
 const ceoImage = { url: "/ceo-adnan-paracha.jpg" };
 
