@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
-import { Calculator, X, Phone, MessageCircle, Home, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
+import { Calculator, X, Phone, MessageCircle, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
 import materialsSpec from "@/assets/nv-materials-spec.jpg.asset.json";
 import greyServices from "@/assets/nv-grey-services.jpg.asset.json";
 
 const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
 
-type PackageKey = "grey" | "finishing" | "turnkey";
+type PackageKey = "grey" | "finishing";
 
 const PACKAGES: Record<
   PackageKey,
@@ -23,12 +23,6 @@ const PACKAGES: Record<
     rate: 2400,
     blurb: "Tiles, paint, woodwork, electrical & plumbing fixtures.",
     icon: Hammer,
-  },
-  turnkey: {
-    label: "Turnkey A++ Quality (Grey + Finishing)",
-    rate: 5000,
-    blurb: "Complete ready-to-move-in home, premium materials, on-time delivery.",
-    icon: Home,
   },
 };
 
@@ -141,7 +135,7 @@ export function CostCalculator() {
                 <label className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
                   Select Package
                 </label>
-                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {(Object.keys(PACKAGES) as PackageKey[]).map((key) => {
                     const p = PACKAGES[key];
                     const Icon = p.icon;
