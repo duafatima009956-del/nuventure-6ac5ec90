@@ -212,6 +212,7 @@ function RootComponent() {
         {!isGate && splashDone && <WhatsAppFloat />}
         {!isGate && splashDone && <OfferPopup />}
         {!isGate && splashDone && <CostCalculator />}
+        {!isGate && splashDone && <LiveVisitors />}
       </div>
     </QueryClientProvider>
   );
