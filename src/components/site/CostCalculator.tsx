@@ -277,6 +277,44 @@ export function CostCalculator() {
           </div>
         </div>
       )}
+
+      {showSpec && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Materials specification"
+          onClick={() => setShowSpec(false)}
+          className="fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-black/90 px-3 py-6 backdrop-blur-md animate-fade-in"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative my-auto w-[min(900px,100%)] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-accent/40 animate-scale-in"
+          >
+            <button
+              onClick={() => setShowSpec(false)}
+              aria-label="Close"
+              className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition hover:scale-110 hover:bg-black/90"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="bg-primary px-5 py-3 text-primary-foreground">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                Nuventure Constructions
+              </p>
+              <h3 className="text-base font-black sm:text-lg">
+                Materials Specification — Silver · Gold · Platinum
+              </h3>
+            </div>
+            <div className="max-h-[75vh] overflow-y-auto bg-white">
+              <img
+                src={materialsSpec.url}
+                alt="Nuventure Constructions materials specification: Silver, Gold and Platinum packages"
+                className="h-auto w-full"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
