@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Calculator, X, Phone, MessageCircle, Home, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
 import materialsSpec from "@/assets/nv-materials-spec.jpg.asset.json";
+import greyServices from "@/assets/nv-grey-services.jpg.asset.json";
 
 const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
@@ -38,7 +39,7 @@ function formatPkr(n: number) {
 export function CostCalculator() {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
-  const [showSpec, setShowSpec] = useState(false);
+  const [showSpec, setShowSpec] = useState<null | "grey" | "turnkey">(null);
   const [pkg, setPkg] = useState<PackageKey>("grey");
   const [area, setArea] = useState<number>(1500);
 
@@ -166,27 +167,47 @@ export function CostCalculator() {
                         <span className={`mt-2 text-[11px] font-bold uppercase tracking-wider ${active ? "text-primary-foreground" : "text-foreground"}`}>
                           {p.label}
                         </span>
-                        <span
-                          className={`mt-1 text-[11px] font-semibold ${
-                            active ? "text-accent" : "text-primary"
-                          }`}
-                        >
-                          ₨{p.rate.toLocaleString()}/sqft
-                        </span>
+                        {key === "finishing" && (
+                          <span
+                            className={`mt-1 text-[11px] font-semibold ${
+                              active ? "text-accent" : "text-primary"
+                            }`}
+                          >
+                            ₨{p.rate.toLocaleString()}/sqft
+                          </span>
+                        )}
                       </button>
                     );
                   })}
                 </div>
                 <p className="mt-2 text-xs font-medium text-foreground/80">{PACKAGES[pkg].blurb}</p>
-                <button
-                  type="button"
-                  onClick={() => setShowSpec(true)}
-                  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-accent/60 bg-accent/10 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary transition-all hover:bg-accent/20 hover:border-accent hover:shadow-md"
-                >
-                  <FileText className="h-4 w-4 text-accent" />
-                  View Silver / Gold / Platinum Materials
-                  <ZoomIn className="h-3.5 w-3.5 opacity-60" />
-                </button>
+                <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowSpec("grey")}
+                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary to-primary/90 px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary-foreground shadow-lg ring-2 ring-accent/60 transition-all hover:scale-[1.02] hover:shadow-xl"
+                  >
+                    <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-accent/70" />
+                    <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-full" />
+                    <FileText className="relative h-4 w-4 text-accent" />
+                    <span className="relative">Grey A++ Material</span>
+                    <ZoomIn className="relative h-3.5 w-3.5 text-accent" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowSpec("turnkey")}
+                    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent via-amber-400 to-accent px-4 py-3 text-[11px] font-black uppercase tracking-[0.14em] text-primary shadow-lg ring-2 ring-primary/40 transition-all hover:scale-[1.02] hover:shadow-xl"
+                  >
+                    <span className="pointer-events-none absolute inset-0 animate-pulse rounded-xl ring-2 ring-primary/50" />
+                    <span className="pointer-events-none absolute -inset-x-full top-0 h-full w-1/2 -skew-x-12 bg-white/40 blur-md transition-all duration-700 group-hover:left-full" />
+                    <FileText className="relative h-4 w-4 text-primary" />
+                    <span className="relative">Grey + Finishing A++</span>
+                    <ZoomIn className="relative h-3.5 w-3.5 text-primary" />
+                  </button>
+                </div>
+                <p className="mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-accent animate-pulse">
+                  ↑ Tap to view detailed material specification ↑
+                </p>
               </div>
 
               {/* Area input */}
@@ -283,7 +304,7 @@ export function CostCalculator() {
           role="dialog"
           aria-modal="true"
           aria-label="Materials specification"
-          onClick={() => setShowSpec(false)}
+          onClick={() => setShowSpec(null)}
           className="fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-black/90 px-3 py-6 backdrop-blur-md animate-fade-in"
         >
           <div
@@ -291,7 +312,7 @@ export function CostCalculator() {
             className="relative my-auto w-[min(900px,100%)] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-accent/40 animate-scale-in"
           >
             <button
-              onClick={() => setShowSpec(false)}
+              onClick={() => setShowSpec(null)}
               aria-label="Close"
               className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition hover:scale-110 hover:bg-black/90"
             >
@@ -302,13 +323,19 @@ export function CostCalculator() {
                 Nuventure Constructions
               </p>
               <h3 className="text-base font-black sm:text-lg">
-                Materials Specification — Silver · Gold · Platinum
+                {showSpec === "grey"
+                  ? "Grey Structure A++ — Detailed Scope"
+                  : "Grey + Finishing A++ — Silver · Gold · Platinum"}
               </h3>
             </div>
             <div className="max-h-[75vh] overflow-y-auto bg-white">
               <img
-                src={materialsSpec.url}
-                alt="Nuventure Constructions materials specification: Silver, Gold and Platinum packages"
+                src={showSpec === "grey" ? greyServices.url : materialsSpec.url}
+                alt={
+                  showSpec === "grey"
+                    ? "Nuventure Constructions grey structure services specification"
+                    : "Nuventure Constructions materials specification: Silver, Gold and Platinum packages"
+                }
                 className="h-auto w-full"
               />
             </div>
