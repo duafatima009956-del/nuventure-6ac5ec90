@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone, User } from "lucide-react";
 import { SocialIcons } from "@/components/site/SocialIcons";
 
-const logo = "/nuventure-logo.jpg";
+const logo = "/nuventure-logo.webp";
 const WHATSAPP = "https://wa.me/923284734463";
 
 export function Footer() {
@@ -14,6 +14,8 @@ export function Footer() {
             <img
               src={logo}
               alt="Nuventure Constructions logo"
+              loading="lazy"
+              decoding="async"
               className="h-11 w-11 object-contain"
             />
             <span className="leading-tight">
@@ -77,8 +79,10 @@ export function Footer() {
           className="mt-3 inline-flex items-center gap-2 rounded-sm border border-white/20 bg-white/5 px-3 py-1.5 text-white/85 transition hover:border-white/50 hover:text-white"
         >
           <img
-            src="/brandup-logo.jpg"
+            src="/brandup-logo.webp"
             alt="Brand Up logo"
+            loading="lazy"
+            decoding="async"
             className="h-5 w-5 rounded-full bg-white object-contain p-0.5"
           />
           <span className="font-medium tracking-wide">
