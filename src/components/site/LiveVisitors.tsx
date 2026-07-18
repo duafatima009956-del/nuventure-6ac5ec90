@@ -32,7 +32,7 @@ export function LiveVisitors() {
 
   return (
     <div
-      className="fixed bottom-4 left-4 z-[60] flex items-center gap-2 rounded-full border border-white/10 bg-black/80 px-3 py-2 text-xs font-medium text-white shadow-lg backdrop-blur-md"
+      className="fixed left-1/2 top-20 z-[130] flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-black/80 px-3 py-1.5 text-xs font-medium text-white shadow-lg backdrop-blur-md sm:left-4 sm:top-24 sm:translate-x-0"
       role="status"
       aria-live="polite"
     >
