@@ -178,6 +178,15 @@ export function CostCalculator() {
                   })}
                 </div>
                 <p className="mt-2 text-xs font-medium text-foreground/80">{PACKAGES[pkg].blurb}</p>
+                <button
+                  type="button"
+                  onClick={() => setShowSpec(true)}
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-accent/60 bg-accent/10 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary transition-all hover:bg-accent/20 hover:border-accent hover:shadow-md"
+                >
+                  <FileText className="h-4 w-4 text-accent" />
+                  View Silver / Gold / Platinum Materials
+                  <ZoomIn className="h-3.5 w-3.5 opacity-60" />
+                </button>
               </div>
 
               {/* Area input */}
