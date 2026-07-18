@@ -12,19 +12,19 @@ const PACKAGES: Record<
   { label: string; rate: number; blurb: string; icon: React.ComponentType<{ className?: string }> }
 > = {
   grey: {
-    label: "Grey Structure A++",
+    label: "Grey Structure A++ Quality",
     rate: 2600,
     blurb: "60-grade steel, RCC structure, foundation, brickwork & plaster.",
     icon: Building2,
   },
   finishing: {
-    label: "Finishing A++",
+    label: "Finishing A++ Quality",
     rate: 2400,
     blurb: "Tiles, paint, woodwork, electrical & plumbing fixtures.",
     icon: Hammer,
   },
   turnkey: {
-    label: "Turnkey A++ (Grey + Finishing)",
+    label: "Turnkey A++ Quality (Grey + Finishing)",
     rate: 5000,
     blurb: "Complete ready-to-move-in home, premium materials, on-time delivery.",
     icon: Home,
