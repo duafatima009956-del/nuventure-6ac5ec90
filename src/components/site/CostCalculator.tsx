@@ -205,6 +205,48 @@ export function CostCalculator() {
                     <ZoomIn className="relative h-3.5 w-3.5 text-primary" />
                   </button>
                 </div>
+
+                {pkg === "finishing" && (
+                  <div className="mt-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
+                      Finishing Tier
+                    </label>
+                    <div className="mt-2 grid grid-cols-3 gap-2">
+                      {(Object.keys(FINISH_TIERS) as FinishTier[]).map((key) => {
+                        const t = FINISH_TIERS[key];
+                        const active = finishTier === key;
+                        const tone =
+                          key === "silver"
+                            ? "from-slate-200 to-slate-400 text-slate-900"
+                            : key === "gold"
+                              ? "from-amber-300 to-amber-500 text-amber-950"
+                              : "from-zinc-300 via-slate-100 to-zinc-400 text-zinc-900";
+                        return (
+                          <button
+                            key={key}
+                            type="button"
+                            onClick={() => setFinishTier(key)}
+                            className={`relative flex flex-col items-center rounded-xl border-2 p-2.5 text-center transition-all ${
+                              active
+                                ? "border-accent bg-primary text-primary-foreground shadow-lg scale-[1.03]"
+                                : "border-border bg-white text-foreground hover:border-accent"
+                            }`}
+                          >
+                            <span
+                              className={`inline-block h-4 w-full rounded-md bg-gradient-to-r ${tone} shadow-inner`}
+                            />
+                            <span className="mt-1.5 text-[11px] font-black uppercase tracking-wider">
+                              {t.label}
+                            </span>
+                            <span className={`text-[10px] font-bold ${active ? "text-accent" : "text-primary"}`}>
+                              ₨{t.rate.toLocaleString()}/sqft
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Area input */}
