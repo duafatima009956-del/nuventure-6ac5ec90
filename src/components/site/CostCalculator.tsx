@@ -52,7 +52,7 @@ export function CostCalculator() {
       ? `${PACKAGES.finishing.label} — ${FINISH_TIERS[finishTier].label}`
       : PACKAGES.grey.label;
   const total = useMemo(() => currentRate * (Number.isFinite(area) ? area : 0), [currentRate, area]);
-  const advance = total * 0.2;
+  
 
   const close = () => {
     setClosing(true);
