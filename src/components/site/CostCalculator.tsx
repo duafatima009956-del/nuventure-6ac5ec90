@@ -43,9 +43,15 @@ export function CostCalculator() {
   const [closing, setClosing] = useState(false);
   const [showSpec, setShowSpec] = useState<null | "grey" | "turnkey">(null);
   const [pkg, setPkg] = useState<PackageKey>("grey");
+  const [finishTier, setFinishTier] = useState<FinishTier>("silver");
   const [area, setArea] = useState<number>(1500);
 
-  const total = useMemo(() => PACKAGES[pkg].rate * (Number.isFinite(area) ? area : 0), [pkg, area]);
+  const currentRate = pkg === "finishing" ? FINISH_TIERS[finishTier].rate : PACKAGES.grey.rate;
+  const currentLabel =
+    pkg === "finishing"
+      ? `${PACKAGES.finishing.label} — ${FINISH_TIERS[finishTier].label}`
+      : PACKAGES.grey.label;
+  const total = useMemo(() => currentRate * (Number.isFinite(area) ? area : 0), [currentRate, area]);
   const advance = total * 0.2;
 
   const close = () => {
@@ -57,7 +63,7 @@ export function CostCalculator() {
   };
 
   const waMessage = encodeURIComponent(
-    `Hi Nuventure Constructions,\n\nI used your cost calculator:\n• Package: ${PACKAGES[pkg].label}\n• Covered Area: ${area} sqft\n• Rate: ₨${PACKAGES[pkg].rate}/sqft\n• Estimated Total: ${formatPkr(total)}\n\nPlease share a detailed quote.`,
+    `Hi Nuventure Constructions,\n\nI used your cost calculator:\n• Package: ${currentLabel}\n• Covered Area: ${area} sqft\n• Rate: ₨${currentRate}/sqft\n• Estimated Total: ${formatPkr(total)}\n\nPlease share a detailed quote.`,
   );
   const waHref = `https://wa.me/${WHATSAPP_NUM}?text=${waMessage}`;
 
