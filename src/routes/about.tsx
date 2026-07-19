@@ -59,10 +59,13 @@ function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Nuventure Constructions is a full-service design-build firm led by{" "}
-            <strong className="text-foreground">Adnan Javed Paracha</strong>. From
-            contemporary architecture and photo-real 3D elevations to grey structure and
-            turnkey handover — we deliver homes all over Pakistan that are
-            built to last and designed to inspire.
+            <strong className="text-foreground">Adnan Javed Paracha</strong>. Each
+            project is dedicated to our civil engineer / site engineer exclusively,
+            who is responsible to look after the whole project under the direction
+            of our CEO during each step. From contemporary architecture and
+            photo-real 3D elevations to grey structure and turnkey handover — we
+            deliver homes all over Pakistan that are built to last and designed to
+            inspire.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/projects" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]">
