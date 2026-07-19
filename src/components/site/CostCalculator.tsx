@@ -296,7 +296,7 @@ export function CostCalculator() {
                       {formatPkr(total)}
                     </p>
                     <p className="mt-1 text-[11px] text-primary-foreground/70">
-                      {area || 0} sqft × ₨{PACKAGES[pkg].rate}/sqft
+                      {area || 0} sqft × ₨{currentRate}/sqft
                     </p>
                   </div>
                   <div className="hidden shrink-0 rounded-xl bg-accent/10 p-3 ring-1 ring-accent/30 sm:block">
