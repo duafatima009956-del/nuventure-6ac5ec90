@@ -8,23 +8,30 @@ const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
 
 type PackageKey = "grey" | "finishing";
+type FinishTier = "silver" | "gold" | "platinum";
 
 const PACKAGES: Record<
   PackageKey,
   { label: string; rate: number; blurb: string; icon: React.ComponentType<{ className?: string }> }
 > = {
   grey: {
-    label: "Grey Structure A++ Quality",
+    label: "Grey Structure (A++ Material)",
     rate: 2600,
     blurb: "60-grade steel, RCC structure, foundation, brickwork & plaster.",
     icon: Building2,
   },
   finishing: {
-    label: "Grey Structure + Finishing A++ Quality",
-    rate: 2400,
+    label: "Grey Structure + Finishing (A++ Material)",
+    rate: 3700,
     blurb: "Complete turnkey: grey structure with tiles, paint, woodwork, electrical & plumbing.",
     icon: Hammer,
   },
+};
+
+const FINISH_TIERS: Record<FinishTier, { label: string; rate: number }> = {
+  silver: { label: "Silver", rate: 3700 },
+  gold: { label: "Gold", rate: 4800 },
+  platinum: { label: "Platinum", rate: 6200 },
 };
 
 function formatPkr(n: number) {
@@ -36,9 +43,15 @@ export function CostCalculator() {
   const [closing, setClosing] = useState(false);
   const [showSpec, setShowSpec] = useState<null | "grey" | "turnkey">(null);
   const [pkg, setPkg] = useState<PackageKey>("grey");
+  const [finishTier, setFinishTier] = useState<FinishTier>("silver");
   const [area, setArea] = useState<number>(1500);
 
-  const total = useMemo(() => PACKAGES[pkg].rate * (Number.isFinite(area) ? area : 0), [pkg, area]);
+  const currentRate = pkg === "finishing" ? FINISH_TIERS[finishTier].rate : PACKAGES.grey.rate;
+  const currentLabel =
+    pkg === "finishing"
+      ? `${PACKAGES.finishing.label} — ${FINISH_TIERS[finishTier].label}`
+      : PACKAGES.grey.label;
+  const total = useMemo(() => currentRate * (Number.isFinite(area) ? area : 0), [currentRate, area]);
   const advance = total * 0.2;
 
   const close = () => {
@@ -50,7 +63,7 @@ export function CostCalculator() {
   };
 
   const waMessage = encodeURIComponent(
-    `Hi Nuventure Constructions,\n\nI used your cost calculator:\n• Package: ${PACKAGES[pkg].label}\n• Covered Area: ${area} sqft\n• Rate: ₨${PACKAGES[pkg].rate}/sqft\n• Estimated Total: ${formatPkr(total)}\n\nPlease share a detailed quote.`,
+    `Hi Nuventure Constructions,\n\nI used your cost calculator:\n• Package: ${currentLabel}\n• Covered Area: ${area} sqft\n• Rate: ₨${currentRate}/sqft\n• Estimated Total: ${formatPkr(total)}\n\nPlease share a detailed quote.`,
   );
   const waHref = `https://wa.me/${WHATSAPP_NUM}?text=${waMessage}`;
 
@@ -192,6 +205,48 @@ export function CostCalculator() {
                     <ZoomIn className="relative h-3.5 w-3.5 text-primary" />
                   </button>
                 </div>
+
+                {pkg === "finishing" && (
+                  <div className="mt-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.24em] text-muted-foreground">
+                      Finishing Tier
+                    </label>
+                    <div className="mt-2 grid grid-cols-3 gap-2">
+                      {(Object.keys(FINISH_TIERS) as FinishTier[]).map((key) => {
+                        const t = FINISH_TIERS[key];
+                        const active = finishTier === key;
+                        const tone =
+                          key === "silver"
+                            ? "from-slate-200 to-slate-400 text-slate-900"
+                            : key === "gold"
+                              ? "from-amber-300 to-amber-500 text-amber-950"
+                              : "from-zinc-300 via-slate-100 to-zinc-400 text-zinc-900";
+                        return (
+                          <button
+                            key={key}
+                            type="button"
+                            onClick={() => setFinishTier(key)}
+                            className={`relative flex flex-col items-center rounded-xl border-2 p-2.5 text-center transition-all ${
+                              active
+                                ? "border-accent bg-primary text-primary-foreground shadow-lg scale-[1.03]"
+                                : "border-border bg-white text-foreground hover:border-accent"
+                            }`}
+                          >
+                            <span
+                              className={`inline-block h-4 w-full rounded-md bg-gradient-to-r ${tone} shadow-inner`}
+                            />
+                            <span className="mt-1.5 text-[11px] font-black uppercase tracking-wider">
+                              {t.label}
+                            </span>
+                            <span className={`text-[10px] font-bold ${active ? "text-accent" : "text-primary"}`}>
+                              ₨{t.rate.toLocaleString()}/sqft
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Area input */}
@@ -241,7 +296,7 @@ export function CostCalculator() {
                       {formatPkr(total)}
                     </p>
                     <p className="mt-1 text-[11px] text-primary-foreground/70">
-                      {area || 0} sqft × ₨{PACKAGES[pkg].rate}/sqft
+                      {area || 0} sqft × ₨{currentRate}/sqft
                     </p>
                   </div>
                   <div className="hidden shrink-0 rounded-xl bg-accent/10 p-3 ring-1 ring-accent/30 sm:block">
