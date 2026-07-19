@@ -62,7 +62,7 @@ const services = [
 ];
 
 const whyUs = [
-  { title: "Two Major Cities", desc: "Active presence in both all over Pakistan — one brand, double trust." },
+  { title: "Nationwide Coverage", desc: "Serving clients all over Pakistan — one brand, trusted everywhere." },
   { title: "3D Before Build", desc: "Approve your project in photo-real 3D before we break ground." },
   { title: "Owner Supervision", desc: "Every site personally monitored by Adnan Javed Paracha." },
   { title: "End-to-End Delivery", desc: "Design, construction and finishing — everything under one roof." },
