@@ -25,10 +25,10 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Explore Nuventure's signature projects — luxury homes, commercial plazas and HD 3D elevations across Lahore & Islamabad.",
+          "Explore Nuventure's signature projects — luxury homes, commercial plazas and HD 3D elevations all over Pakistan.",
       },
       { property: "og:title", content: "Our Signature Work — Nuventure Constructions" },
-      { property: "og:description", content: "Modern homes & photo-realistic 3D elevations across Lahore & Islamabad." },
+      { property: "og:description", content: "Modern homes & photo-realistic 3D elevations all over Pakistan." },
     ],
   }),
   component: ProjectsPage,
@@ -131,7 +131,7 @@ function ProjectsPage() {
         Modern Homes &amp; <span className="font-black text-accent">3D Elevations</span> 🖼️
       </h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-        Explore Nuventure's premium projects across Lahore &amp; Islamabad. Every design begins with 3D
+        Explore Nuventure's premium projects all over Pakistan. Every design begins with 3D
         visualization and turns into a real masterpiece.
       </p>
 

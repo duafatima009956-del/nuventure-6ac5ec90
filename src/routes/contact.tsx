@@ -10,17 +10,17 @@ const EMAIL = "info@nuventureconstructions.com";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Nuventure Constructions — Free Quote in Lahore & Islamabad" },
+      { title: "Contact Nuventure Constructions — Free Quote all over Pakistan" },
       {
         name: "description",
         content:
-          "Get a free consultation and cost estimate from Nuventure Constructions. WhatsApp +92 328 4734463 or visit our Lahore & Islamabad offices.",
+          "Get a free consultation and cost estimate from Nuventure Constructions. WhatsApp +92 328 4734463 or visit our All Over Pakistan offices.",
       },
       { property: "og:title", content: "Contact Nuventure Constructions" },
       {
         property: "og:description",
         content:
-          "Free consultation · Instant estimate · HD 3D previews. Reach us across Lahore & Islamabad.",
+          "Free consultation · Instant estimate · HD 3D previews. Reach us all over Pakistan.",
       },
     ],
   }),

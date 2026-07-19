@@ -42,7 +42,7 @@ export function ComingSoon({ pageName }: { pageName: string }) {
       </div>
 
       <p className="mt-10 text-xs uppercase tracking-widest text-muted-foreground">
-        Nuventure Constructions · Lahore &amp; Islamabad
+        Nuventure Constructions · All Over Pakistan
       </p>
     </div>
   );
