@@ -15,11 +15,11 @@ const heroSlides = [
     eyebrow: "Welcome to Nuventure Constructions",
     titleLead: "We build the homes",
     titleAccent: "Pakistan trusts.",
-    desc: "A full-service construction firm led by Adnan Javed Paracha — architecture, 3D elevations, grey structure and turnkey delivery across Lahore & Islamabad.",
+    desc: "A full-service construction firm led by Adnan Javed Paracha — architecture, 3D elevations, grey structure and turnkey delivery all over Pakistan.",
   },
   {
     img: "/nv-hero-2.webp",
-    eyebrow: "Modern Architecture · Lahore & Islamabad",
+    eyebrow: "Modern Architecture · All Over Pakistan",
     titleLead: "Designer villas with",
     titleAccent: "photo-real 3D previews.",
     desc: "Approve every elevation, façade and interior in cinematic 3D before we break ground — no surprises, only precision.",
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { Icon: Ruler, img: "/nv-svc-1.webp", title: "Architecture & Design", desc: "Creative layouts, approved floor plans and construction drawings — a solid blueprint before ground breaking." },
-  { Icon: Building2, img: "/nv-svc-2.webp", title: "Residential & Commercial", desc: "Luxury homes, villas and commercial plazas built with top-grade materials across Lahore and Islamabad." },
+  { Icon: Building2, img: "/nv-svc-2.webp", title: "Residential & Commercial", desc: "Luxury homes, villas and commercial plazas built with top-grade materials all over Pakistan." },
   { Icon: Layers, img: "/nv-svc-3.webp", title: "3D Front Elevations", desc: "Photo-realistic 3D elevations — see your project before it takes physical shape." },
   { Icon: Hammer, img: "/nv-svc-4.webp", title: "Renovation & Upgrades", desc: "Give old buildings a modern transformation — inside and out, structural to finishing." },
   { Icon: HardHat, img: "/nv-svc-5.webp", title: "Project Supervision", desc: "Full oversight from foundation to handover. Timeline control, budget discipline, quality assurance." },
@@ -62,7 +62,7 @@ const services = [
 ];
 
 const whyUs = [
-  { title: "Two Major Cities", desc: "Active presence in both Lahore and Islamabad — one brand, double trust." },
+  { title: "Nationwide Coverage", desc: "Serving clients all over Pakistan — one brand, trusted everywhere." },
   { title: "3D Before Build", desc: "Approve your project in photo-real 3D before we break ground." },
   { title: "Owner Supervision", desc: "Every site personally monitored by Adnan Javed Paracha." },
   { title: "End-to-End Delivery", desc: "Design, construction and finishing — everything under one roof." },
@@ -567,7 +567,7 @@ function Index() {
             <span className="text-accent"> build every project.</span>
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            More than concrete and steel — Nuventure is built on a clear promise to our clients across Lahore and Islamabad.
+            More than concrete and steel — Nuventure is built on a clear promise to our clients all over Pakistan.
           </p>
         </div>
 
@@ -584,7 +584,7 @@ function Index() {
               Icon: Eye,
               tag: "02 · Vision",
               title: "Set a new standard for Pakistani construction.",
-              desc: "To be the most trusted name in modern architecture across Lahore and Islamabad — where clients approve every façade, interior and finish in photo-real 3D long before ground is broken.",
+              desc: "To be the most trusted name in modern architecture all over Pakistan — where clients approve every façade, interior and finish in photo-real 3D long before ground is broken.",
               points: ["3D-first design workflow", "Two-city delivery network", "Turnkey, one-team accountability"],
             },
             {
@@ -751,7 +751,7 @@ function Index() {
       <section className="shine-box mx-auto mt-28 w-[min(1200px,calc(100%-2rem))] p-6 sm:p-10">
         <Eyebrow>Why Nuventure</Eyebrow>
         <h2 className="mt-4 max-w-3xl text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-          Why clients in Lahore &amp; Islamabad choose us.
+          Why clients all over Pakistan choose us.
         </h2>
         <WhyChooseCarousel items={whyUs} />
       </section>

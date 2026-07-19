@@ -9,11 +9,11 @@ const WHATSAPP = "https://wa.me/923284734463";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Nuventure Constructions — Adnan Javed Paracha | Lahore & Islamabad" },
+      { title: "About Nuventure Constructions — Adnan Javed Paracha | All Over Pakistan" },
       {
         name: "description",
         content:
-          "Nuventure Constructions — a modern design-build firm founded by Adnan Javed Paracha. Premium homes, 3D elevations and turnkey delivery across Lahore & Islamabad.",
+          "Nuventure Constructions — a modern design-build firm founded by Adnan Javed Paracha. Premium homes, 3D elevations and turnkey delivery all over Pakistan.",
       },
       { property: "og:title", content: "About Nuventure Constructions — Modern Design-Build Firm" },
       {
@@ -61,7 +61,7 @@ function AboutPage() {
             Nuventure Constructions is a full-service design-build firm led by{" "}
             <strong className="text-foreground">Adnan Javed Paracha</strong>. From
             contemporary architecture and photo-real 3D elevations to grey structure and
-            turnkey handover — we deliver homes across Lahore &amp; Islamabad that are
+            turnkey handover — we deliver homes all over Pakistan that are
             built to last and designed to inspire.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

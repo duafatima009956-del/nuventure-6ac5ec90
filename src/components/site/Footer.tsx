@@ -26,8 +26,8 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-white/80">
-            A full-service construction firm founded by Adnan Javed Paracha — serving Lahore
-            &amp; Islamabad with architecture, 3D elevations, grey structure and turnkey delivery.
+            A full-service construction firm founded by Adnan Javed Paracha — serving clients
+            all over Pakistan with architecture, 3D elevations, grey structure and turnkey delivery.
           </p>
           <div className="mt-6">
             <h4 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Follow us</h4>

@@ -17,11 +17,11 @@ const WHATSAPP = "https://wa.me/923284734463";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Construction Services — Nuventure Constructions | Lahore & Islamabad" },
+      { title: "Construction Services — Nuventure Constructions | All Over Pakistan" },
       {
         name: "description",
         content:
-          "Architecture, 3D elevations, grey structure, turnkey delivery, renovation and interior design across Lahore & Islamabad — by Nuventure Constructions.",
+          "Architecture, 3D elevations, grey structure, turnkey delivery, renovation and interior design all over Pakistan — by Nuventure Constructions.",
       },
       { property: "og:title", content: "Our Construction Services — Nuventure" },
       {

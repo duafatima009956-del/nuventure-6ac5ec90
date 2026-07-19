@@ -52,7 +52,7 @@ export function CostCalculator() {
       ? `${PACKAGES.finishing.label} — ${FINISH_TIERS[finishTier].label}`
       : PACKAGES.grey.label;
   const total = useMemo(() => currentRate * (Number.isFinite(area) ? area : 0), [currentRate, area]);
-  const advance = total * 0.2;
+  
 
   const close = () => {
     setClosing(true);
@@ -302,10 +302,6 @@ export function CostCalculator() {
                   <div className="hidden shrink-0 rounded-xl bg-accent/10 p-3 ring-1 ring-accent/30 sm:block">
                     <Calculator className="h-8 w-8 text-accent" />
                   </div>
-                </div>
-                <div className="mt-3 flex items-center justify-between border-t border-primary-foreground/15 pt-3 text-xs">
-                  <span className="text-primary-foreground/70">Booking Advance (20%)</span>
-                  <span className="font-bold text-accent">{formatPkr(advance)}</span>
                 </div>
               </div>
 

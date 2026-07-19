@@ -85,18 +85,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nuventure Constructions — Modern Homes & 3D Elevations in Lahore & Islamabad" },
+      { title: "Nuventure Constructions — Modern Homes & 3D Elevations all over Pakistan" },
       {
         name: "description",
         content:
-          "Nuventure Constructions — founded by Adnan Javed Paracha. Contemporary design, premium build quality, HD 3D elevations and turnkey delivery across Lahore & Islamabad.",
+          "Nuventure Constructions — founded by Adnan Javed Paracha. Contemporary design, premium build quality, HD 3D elevations and turnkey delivery all over Pakistan.",
       },
       { name: "author", content: "Nuventure Constructions" },
       { property: "og:title", content: "Nuventure Constructions — Contemporary Design, Premium Build Quality" },
       {
         property: "og:description",
         content:
-          "Modern homes, luxury villas & commercial plazas across Lahore and Islamabad. Book your free 3D design session with Adnan Javed Paracha.",
+          "Modern homes, luxury villas & commercial plazas all over Pakistan. Book your free 3D design session with Adnan Javed Paracha.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
