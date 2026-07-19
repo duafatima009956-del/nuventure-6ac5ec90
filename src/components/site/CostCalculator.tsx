@@ -8,23 +8,30 @@ const PHONE_TEL = "tel:+923284734463";
 const WHATSAPP_NUM = "923284734463";
 
 type PackageKey = "grey" | "finishing";
+type FinishTier = "silver" | "gold" | "platinum";
 
 const PACKAGES: Record<
   PackageKey,
   { label: string; rate: number; blurb: string; icon: React.ComponentType<{ className?: string }> }
 > = {
   grey: {
-    label: "Grey Structure A++ Quality",
+    label: "Grey Structure (A++ Material)",
     rate: 2600,
     blurb: "60-grade steel, RCC structure, foundation, brickwork & plaster.",
     icon: Building2,
   },
   finishing: {
-    label: "Grey Structure + Finishing A++ Quality",
-    rate: 2400,
+    label: "Grey Structure + Finishing (A++ Material)",
+    rate: 3700,
     blurb: "Complete turnkey: grey structure with tiles, paint, woodwork, electrical & plumbing.",
     icon: Hammer,
   },
+};
+
+const FINISH_TIERS: Record<FinishTier, { label: string; rate: number }> = {
+  silver: { label: "Silver", rate: 3700 },
+  gold: { label: "Gold", rate: 4800 },
+  platinum: { label: "Platinum", rate: 6200 },
 };
 
 function formatPkr(n: number) {
