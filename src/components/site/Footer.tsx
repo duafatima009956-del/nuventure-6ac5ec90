@@ -51,7 +51,8 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-white/80">
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              Office 201, 2nd Floor, Salam Tower,<br />Faisal Town Markaz, Islamabad
+{/* Salam Tower,Block A Markez Faisal Town Islamabad */}
+            Office No. 201, 2nd Floor, Salam Tower,<br /> Block A Markez Faisal Islamabad
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="h-4 w-4 shrink-0 text-accent" />
