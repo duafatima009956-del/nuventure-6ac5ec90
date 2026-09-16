@@ -16,11 +16,11 @@ export function ThemeToggle() {
     try {
       const saved = localStorage.getItem(KEY) as "dark" | "light" | null;
       const initial =
-        saved ??
-        (window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        saved ?? (window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       setMode(initial);
       applyTheme(initial);
-    } catch {
+    } catch (error) {
+      console.warn("Theme preference could not be loaded; using default theme.", error);
       applyTheme("light");
     }
   }, []);
@@ -31,7 +31,9 @@ export function ThemeToggle() {
     applyTheme(next);
     try {
       localStorage.setItem(KEY, next);
-    } catch {}
+    } catch (error) {
+      console.warn("Theme preference could not be saved.", error);
+    }
   };
 
   return (
