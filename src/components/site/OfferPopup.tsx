@@ -1,117 +1,162 @@
-import { useEffect, useRef, useState } from "react";
-import { X, Phone } from "lucide-react";
-const POPUP_IMG = "/nv-offer-popup.webp";
+import { useEffect, useState } from "react";
+import { Type, X } from "lucide-react";
 
-const STORAGE_KEY = "nuventure-welcome-seen-v2";
-const WHATSAPP = "tel:+923284734463";
+const FONTS = [
+  { label: "Inter", value: '"Inter", system-ui, sans-serif' },
+  { label: "Space Grotesk", value: '"Space Grotesk", "Inter", sans-serif' },
+  { label: "Poppins", value: '"Poppins", system-ui, sans-serif' },
+  { label: "Montserrat", value: '"Montserrat", system-ui, sans-serif' },
+  { label: "Playfair Display", value: '"Playfair Display", Georgia, serif' },
+  { label: "Roboto Slab", value: '"Roboto Slab", Georgia, serif' },
+  { label: "JetBrains Mono", value: '"JetBrains Mono", ui-monospace, monospace' },
+  { label: "System", value: "system-ui, sans-serif" },
+];
 
-export function OfferPopup() {
+const GOOGLE_HREF =
+  "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap";
+
+type Settings = { family: string; scale: number; weight: number };
+const DEFAULTS: Settings = { family: FONTS[0].value, scale: 1, weight: 700 };
+const KEY = "nv-typography";
+
+function apply(s: Settings) {
+  const r = document.documentElement.style;
+  r.setProperty("--user-font-family", s.family);
+  r.setProperty("--user-font-scale", String(s.scale));
+  r.setProperty("--user-font-weight", String(s.weight));
+}
+
+export function TypographyPanel() {
   const [open, setOpen] = useState(false);
-  const [closing, setClosing] = useState(false);
-  const closeTimerRef = useRef<number | null>(null);
+  const [settings, setSettings] = useState<Settings>(DEFAULTS);
 
+  // Inject Google fonts stylesheet once
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-    const t = window.setTimeout(() => {
-      setOpen(true);
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    }, 600);
-    return () => window.clearTimeout(t);
+    if (document.getElementById("nv-typo-fonts")) return;
+    const link = document.createElement("link");
+    link.id = "nv-typo-fonts";
+    link.rel = "stylesheet";
+    link.href = GOOGLE_HREF;
+    document.head.appendChild(link);
   }, []);
 
+  // Load persisted
   useEffect(() => {
-    if (!open || typeof window === "undefined") return;
-
-    const scrollY = window.scrollY;
-    const { overflow, position, top, width } = document.body.style;
-
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
-
-    return () => {
-      document.body.style.overflow = overflow;
-      document.body.style.position = position;
-      document.body.style.top = top;
-      document.body.style.width = width;
-      window.scrollTo(0, scrollY);
-      if (closeTimerRef.current !== null) {
-        window.clearTimeout(closeTimerRef.current);
-        closeTimerRef.current = null;
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const parsed = { ...DEFAULTS, ...JSON.parse(raw) };
+        setSettings(parsed);
+        apply(parsed);
+      } else {
+        apply(DEFAULTS);
       }
-    };
-  }, [open]);
+    } catch (error) {
+      console.warn("Typography settings could not be loaded; resetting to defaults.", error);
+      apply(DEFAULTS);
+    }
+  }, []);
 
-  const close = () => {
-    if (closing) return;
-    setClosing(true);
-    closeTimerRef.current = window.setTimeout(() => setOpen(false), 260);
-  };
+  function update(patch: Partial<Settings>) {
+    const next = { ...settings, ...patch };
+    setSettings(next);
+    apply(next);
+    try {
+      localStorage.setItem(KEY, JSON.stringify(next));
+    } catch (error) {
+      console.warn("Typography settings could not be saved.", error);
+    }
+  }
 
-  if (!open) return null;
+  function reset() {
+    setSettings(DEFAULTS);
+    apply(DEFAULTS);
+    try {
+      localStorage.removeItem(KEY);
+    } catch (error) {
+      console.warn("Typography settings could not be reset.", error);
+    }
+  }
 
   return (
-    <div
-      className={`fixed inset-0 z-[100] flex h-[100svh] items-center justify-center overflow-hidden bg-black/80 backdrop-blur-md transition-opacity duration-300 ${
-        closing ? "opacity-0" : "opacity-100"
-      }`}
-      style={{
-        padding:
-          "max(0.75rem, env(safe-area-inset-top)) max(0.75rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-left))",
-      }}
-      onClick={close}
-    >
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-[120px]" />
-
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="relative flex w-[min(520px,100%)] max-h-[calc(100svh-1.5rem)] flex-col overflow-hidden rounded-2xl bg-transparent shadow-[0_30px_120px_-20px_rgba(0,0,0,0.7)] ring-1 ring-accent/40"
-        style={{
-          boxShadow:
-            "0 0 100px -10px hsl(var(--accent) / 0.45), 0 30px 120px -20px rgba(0,0,0,0.7)",
-        }}
+    <>
+      <button
+        aria-label="Typography settings"
+        onClick={() => setOpen((v) => !v)}
+        className="fixed bottom-24 right-5 z-[120] flex h-12 w-12 items-center justify-center rounded-full bg-[#F97316] text-white shadow-[0_10px_30px_-5px_rgba(249,115,22,0.75)] transition-transform hover:scale-105"
       >
-        <button
-          onClick={close}
-          aria-label="Close"
-          className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition-colors hover:bg-black/80"
-        >
-          <X className="h-4 w-4" />
-        </button>
+        <Type className="h-5 w-5" />
+      </button>
 
-        {/* Poster image */}
-        <div className="shrink min-h-0 leading-none">
-          <img
-            src={POPUP_IMG}
-            alt="Nuventure Constructions — Your Dream Home Starts With The Right Foundation. Grey Structure ₨2600/sqft."
-            className="block aspect-square h-auto max-h-[calc(100svh-7.25rem)] w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
-
-        {/* CTA bar */}
-        <div className="flex flex-col gap-2 bg-primary p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary-foreground/80">
-              Contact Now
-            </p>
-            <p className="mt-0.5 text-sm font-bold text-primary-foreground sm:text-base">
-              Call: 0328-4734463
-            </p>
+      {open && (
+        <div className="fixed bottom-40 right-5 z-[120] w-[min(340px,calc(100vw-2.5rem))] rounded-2xl border border-black/10 bg-white p-5 shadow-2xl">
+          <div className="mb-4 flex items-center justify-between">
+            <h3 className="text-base font-bold text-black">Typography</h3>
+            <button
+              aria-label="Close"
+              onClick={() => setOpen(false)}
+              className="rounded-full p-1 text-black/60 hover:bg-black/5 hover:text-black"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
-          <a
-            href={WHATSAPP}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 text-xs font-bold uppercase tracking-[0.16em] text-accent-foreground shadow-lg transition-colors hover:bg-accent/90 sm:text-sm"
+
+          <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-black/60">
+            Font family
+          </label>
+          <select
+            value={settings.family}
+            onChange={(e) => update({ family: e.target.value })}
+            className="mb-4 w-full rounded-lg border border-black/15 bg-white px-3 py-2 text-sm text-black focus:border-[#F97316] focus:outline-none"
           >
-            <Phone className="h-4 w-4" />
-            Call Now
-          </a>
+            {FONTS.map((f) => (
+              <option key={f.label} value={f.value} style={{ fontFamily: f.value }}>
+                {f.label}
+              </option>
+            ))}
+          </select>
+
+          <label className="mb-1 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-black/60">
+            <span>Size</span>
+            <span className="text-black">{Math.round(settings.scale * 100)}%</span>
+          </label>
+          <input
+            type="range"
+            min={0.8}
+            max={1.4}
+            step={0.05}
+            value={settings.scale}
+            onChange={(e) => update({ scale: parseFloat(e.target.value) })}
+            className="mb-4 w-full accent-[#F97316]"
+          />
+
+          <label className="mb-1 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-black/60">
+            <span>Weight</span>
+            <span className="text-black">{settings.weight}</span>
+          </label>
+          <input
+            type="range"
+            min={300}
+            max={900}
+            step={100}
+            value={settings.weight}
+            onChange={(e) => update({ weight: parseInt(e.target.value, 10) })}
+            className="mb-4 w-full accent-[#F97316]"
+          />
+
+          <div className="mb-4 rounded-lg border border-black/10 bg-black/[0.02] p-3 text-black">
+            <div className="text-xs text-black/50">Preview</div>
+            <div className="mt-1 text-lg">The quick brown fox</div>
+          </div>
+
+          <button
+            onClick={reset}
+            className="w-full rounded-lg border border-black/15 px-3 py-2 text-sm font-semibold text-black hover:bg-black/5"
+          >
+            Reset to default
+          </button>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
