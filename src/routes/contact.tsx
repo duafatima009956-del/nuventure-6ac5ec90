@@ -65,7 +65,7 @@ function ContactPage() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Free consultation · Instant cost estimate · HD 3D preview before construction.
-            Reach us any way you prefer — our founder personally reads every enquiry.
+            Reach us any way you prefer — our CEO personally reads every enquiry.
           </p>
         </div>
       </section>

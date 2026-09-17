@@ -60,7 +60,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2.5">
               <User className="h-4 w-4 shrink-0 text-accent" />
-              Adnan Javed Paracha · Founder
+              Adnan Javed Paracha · CEO
             </li>
             <li className="flex items-center gap-2.5">
               <MessageCircle className="h-4 w-4 shrink-0 text-accent" />

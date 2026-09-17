@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { CountOnView } from "@/components/site/CountUpStat";
 import { MovingGallery } from "@/components/site/MovingGallery";
 import { WhyChooseCarousel } from "@/components/site/WhyChooseCarousel";
+import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
+
 const heroVideo = { url: "/nv-hero-video.mp4" };
 const legacyBanner = "/nv-legacy-banner.webp";
 const greyStructureImg = "/nv-grey-structure.webp";
@@ -39,6 +41,7 @@ const heroSlides = [
     desc: "Direct oversight, transparent timelines and premium materials — the standard behind 120+ delivered projects.",
   },
 ];
+
 const g1 = "/nv-1.webp";
 const g3 = "/nv-3.webp";
 const g5 = "/nv-5.webp";
@@ -79,6 +82,38 @@ const gallery = [
   { src: g8, alt: "Custom designer kitchen with marble finishes" },
 ];
 
+const homeTestimonials = [
+  {
+    quote: "The team translated our rough ideas into a stunning, build-ready design. Every milestone was clear and the finish quality exceeded expectations.",
+    name: "M. Farooq",
+    role: "Homeowner · DHA Lahore",
+    rating: 5,
+  },
+  {
+    quote: "From the first 3D elevation to the final handover, we felt guided and informed. The site supervision made the whole process stress-free.",
+    name: "Ayesha & Bilal",
+    role: "Clients · Bahria Town Islamabad",
+    rating: 5,
+  },
+  {
+    quote: "Their attention to detail and transparent communication gave us confidence from day one. The end result feels both luxurious and timeless.",
+    name: "Sana Karim",
+    role: "Homeowner · Gulberg Lahore",
+    rating: 5,
+  },
+  {
+    quote: "Nuventure brought our commercial plaza to life exactly as promised. The structural integrity and finishing are truly world-class.",
+    name: "Omar Shahid",
+    role: "Investor · Faisal Town",
+    rating: 5,
+  },
+  {
+    quote: "Adnan's personal involvement in our farmhouse project was a game changer. The modern design they proposed fits perfectly with nature.",
+    name: "Zainab Ali",
+    role: "Farmhouse · Multan",
+    rating: 5,
+  },
+];
 
 function Eyebrow({ children }: { children: string }) {
   return (
@@ -94,6 +129,7 @@ function Eyebrow({ children }: { children: string }) {
 function Index() {
   const [slide, setSlide] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  
   useEffect(() => {
     const t = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 4500);
     return () => clearInterval(t);
@@ -112,7 +148,6 @@ function Index() {
       const p = v.play();
       if (p && typeof p.catch === "function") {
         p.catch(() => {
-          // Autoplay-with-sound blocked — stay muted, wait for interaction
           v.muted = true;
           v.play().catch(() => {});
         });
@@ -143,7 +178,7 @@ function Index() {
           }
         }
       },
-      { threshold: [0, 0.5, 1] },
+      { threshold: [0, 0.5, 1] }
     );
     io.observe(v);
     return () => {
@@ -156,7 +191,6 @@ function Index() {
     };
   }, []);
 
-  // Per-card corner light: turn on when card scrolls into view
   useEffect(() => {
     const cards = document.querySelectorAll<HTMLElement>("[data-card-shine]");
     if (!cards.length) return;
@@ -168,7 +202,7 @@ function Index() {
           }
         }
       },
-      { threshold: [0, 0.35, 0.6] },
+      { threshold: [0, 0.35, 0.6] }
     );
     cards.forEach((c) => io.observe(c));
     return () => io.disconnect();
@@ -194,13 +228,11 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
 
-        {/* Watermark */}
         <div className="absolute left-4 top-24 z-10 flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 backdrop-blur-sm ring-1 ring-white/15 sm:left-6 sm:top-28">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/85">Nuventure</span>
         </div>
 
-        {/* Slide indicators */}
         <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
           {heroSlides.map((_, i) => (
             <button
@@ -213,7 +245,6 @@ function Index() {
             />
           ))}
         </div>
-
 
         <div className="relative mx-auto w-[min(1200px,calc(100%-2rem))] pt-32 pb-24 text-center sm:pt-40 sm:pb-32">
           {heroSlides.map((s, i) => (
@@ -241,17 +272,17 @@ function Index() {
             </div>
           ))}
 
-
+          {/* Unified Hero Buttons */}
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4 animate-hero-fade-up [animation-delay:460ms] opacity-0 [animation-fill-mode:forwards]">
             <Link
               to="/projects"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-4 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-colors hover:bg-accent/90"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
             >
               View Projects <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/10"
             >
               Request Consultation
             </Link>
@@ -287,13 +318,11 @@ function Index() {
       {/* Showcase Video */}
       <section className="mx-auto mt-20 w-[min(1200px,calc(100%-2rem))] sm:mt-28">
         <div className="group relative rounded-2xl p-[2px] sm:rounded-3xl">
-          {/* Animated gradient border glow */}
           <span
             aria-hidden
             className="pointer-events-none absolute -inset-[2px] rounded-2xl bg-[conic-gradient(from_0deg,transparent,hsl(var(--accent))/0.9,transparent_30%,transparent_60%,hsl(var(--accent))/0.9,transparent)] opacity-70 blur-[6px] transition-opacity duration-500 group-hover:opacity-100 sm:rounded-3xl animate-[spin_9s_linear_infinite]"
           />
           <div className="relative overflow-hidden rounded-2xl border border-accent/30 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.55),0_0_40px_-10px_hsl(var(--accent)/0.35)] sm:rounded-3xl">
-            {/* Corner light accents */}
             <span className="pointer-events-none absolute left-0 top-0 z-10 h-10 w-10 rounded-tl-2xl border-l-2 border-t-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-tl-3xl" />
             <span className="pointer-events-none absolute right-0 top-0 z-10 h-10 w-10 rounded-tr-2xl border-r-2 border-t-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-tr-3xl" />
             <span className="pointer-events-none absolute bottom-0 left-0 z-10 h-10 w-10 rounded-bl-2xl border-b-2 border-l-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-bl-3xl" />
@@ -320,14 +349,12 @@ function Index() {
           <div className="flex justify-center"><Eyebrow>From the Desk of the CEO</Eyebrow></div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             A message from
-            <span className="text-accent"> our founder.</span>
+            <span className="text-accent"> our CEO.</span>
           </h2>
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-14">
-          {/* Image with premium glow */}
           <div className="group relative mx-auto w-full max-w-md lg:mx-0">
-            {/* Ambient auto-glow */}
             <span
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.35),transparent_70%)] opacity-60 blur-2xl animate-pulse"
@@ -342,12 +369,10 @@ function Index() {
               className="[&.is-lit_.ceo-lite]:opacity-100 [&.is-lit_.ceo-lite]:scale-110 relative block w-full overflow-hidden rounded-[1.5rem] border border-accent/40 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.55),0_0_40px_-10px_hsl(var(--accent)/0.4)] transition-all duration-500 hover:border-accent hover:shadow-[0_30px_70px_-25px_rgba(0,0,0,0.6),0_0_60px_-10px_hsl(var(--accent)/0.7)]"
               aria-label="Toggle spotlight on CEO photo"
             >
-              {/* Hover / click spotlight */}
               <span
                 aria-hidden
                 className="ceo-lite pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_50%_40%,hsl(var(--accent)/0.35),transparent_60%)] opacity-0 transition-all duration-700 group-hover:opacity-100"
               />
-              {/* Corner accents */}
               <span className="pointer-events-none absolute left-0 top-0 z-[3] h-10 w-10 rounded-tl-[1.5rem] border-l-2 border-t-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <span className="pointer-events-none absolute right-0 top-0 z-[3] h-10 w-10 rounded-tr-[1.5rem] border-r-2 border-t-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <span className="pointer-events-none absolute bottom-0 left-0 z-[3] h-10 w-10 rounded-bl-[1.5rem] border-b-2 border-l-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
@@ -361,14 +386,12 @@ function Index() {
                 style={{ imageRendering: "auto" }}
               />
             </button>
-            {/* Name plate */}
             <div className="relative z-[4] mx-auto mt-6 w-fit rounded-full border border-accent/40 bg-card/70 px-5 py-2 text-center shadow-[0_10px_30px_-15px_hsl(var(--accent)/0.5)] backdrop-blur">
               <p className="text-sm font-semibold tracking-wide text-accent sm:text-base">Adnan Javed Paracha</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder & CEO</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">CEO</p>
             </div>
           </div>
 
-          {/* Message */}
           <article className="relative overflow-hidden rounded-2xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_25px_50px_-25px_rgba(0,0,0,0.35)] backdrop-blur-md sm:rounded-3xl sm:p-9 lg:p-10">
             <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl" />
             <div className="relative">
@@ -386,7 +409,7 @@ function Index() {
                 <span className="h-px w-10 bg-accent/60" />
                 <div>
                   <p className="text-sm font-semibold text-accent">Adnan Javed Paracha</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder & CEO · Nuventure Constructions</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">CEO · Nuventure Constructions</p>
                 </div>
               </div>
             </div>
@@ -394,6 +417,19 @@ function Index() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="flex justify-center"><Eyebrow>Client Stories</Eyebrow></div>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Trusted by homeowners who value <span className="text-accent">clarity and craftsmanship.</span>
+          </h2>
+        </div>
+        
+        <div className="mt-12">
+          <TestimonialCarousel items={homeTestimonials} variant="home" />
+        </div>
+      </section>
 
       {/* Build Your Legacy — Banner CTA */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
@@ -409,7 +445,6 @@ function Index() {
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-stretch">
-          {/* Poster */}
           <div className="group relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]">
             <img
               src={legacyBanner}
@@ -420,7 +455,6 @@ function Index() {
             />
           </div>
 
-          {/* Highlights */}
           <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 sm:p-9">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
@@ -452,18 +486,19 @@ function Index() {
               </ul>
             </div>
 
+            {/* Unified Legacy Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
                 <Phone className="h-4 w-4" /> Talk about your dream home
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent/10"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-accent/50 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:-translate-y-0.5 hover:bg-accent/10"
               >
                 Book a consultation <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -486,7 +521,6 @@ function Index() {
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          {/* Reference image */}
           <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_25px_60px_-30px_rgba(0,0,0,0.55)] lg:sticky lg:top-24">
             <img
               src={greyStructureImg}
@@ -497,7 +531,6 @@ function Index() {
             />
           </div>
 
-          {/* Scope list */}
           <div className="rounded-3xl border border-border/70 bg-card/60 p-6 backdrop-blur sm:p-8">
             <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
               {[
@@ -553,7 +586,6 @@ function Index() {
         </div>
       </section>
 
-
       <div className="mt-20 sm:mt-28">
         <MovingGallery />
       </div>
@@ -599,7 +631,6 @@ function Index() {
               key={tag}
               className="group relative overflow-hidden rounded-2xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_25px_50px_-25px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_35px_60px_-25px_rgba(0,0,0,0.45),0_0_40px_-15px_hsl(var(--accent)/0.6)] sm:rounded-3xl sm:p-9"
             >
-              {/* Ambient corner glow */}
               <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/25 blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
@@ -635,7 +666,6 @@ function Index() {
       </section>
 
       {/* Services */}
-
       <section className="mx-auto mt-28 w-[min(1200px,calc(100%-2rem))] p-6 sm:p-10">
         <div className="flex flex-wrap items-end justify-between gap-6 pb-10">
           <div>
@@ -657,17 +687,15 @@ function Index() {
           </Link>
         </div>
 
-        {/* Editorial bento grid */}
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto]">
           {services.map(({ Icon, img, title, desc }, idx) => {
-            // Bento layout classes per index
             const layout = [
-              "lg:col-span-7 lg:row-span-2", // 01 featured tall
-              "lg:col-span-5",                 // 02
-              "lg:col-span-5",                 // 03
-              "lg:col-span-4",                 // 04
-              "lg:col-span-4",                 // 05
-              "lg:col-span-4",                 // 06
+              "lg:col-span-7 lg:row-span-2",
+              "lg:col-span-5",
+              "lg:col-span-5",
+              "lg:col-span-4",
+              "lg:col-span-4",
+              "lg:col-span-4",
             ][idx];
             const isFeatured = idx === 0;
             const num = String(idx + 1).padStart(2, "0");
@@ -677,7 +705,6 @@ function Index() {
                 key={title}
                 className={`group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-border/70 bg-background transition-all duration-700 hover:-translate-y-1 hover:border-accent/50 ${layout}`}
               >
-                {/* Image */}
                 <div className={`relative overflow-hidden ${isFeatured ? "aspect-[4/5] lg:aspect-auto lg:flex-1" : "aspect-[16/10]"}`}>
                   <img
                     src={img}
@@ -686,25 +713,18 @@ function Index() {
                     decoding="async"
                     className="h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   />
-                  {/* Duotone wash */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-accent/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-
-
-
-                  {/* Icon chip */}
                   <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.35)] ring-1 ring-accent/25 backdrop-blur-md">
                     <Icon className="h-5 w-5 text-accent" strokeWidth={1.9} />
                   </div>
 
-                  {/* Watermark */}
                   <div className="absolute left-5 top-5 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1 backdrop-blur-sm ring-1 ring-white/15">
                     <span className="h-1 w-1 rounded-full bg-accent" />
                     <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/90">Nuventure</span>
                   </div>
 
-                  {/* Featured overlay title */}
                   {isFeatured && (
                     <div className="absolute inset-x-0 bottom-0 p-7 text-primary-foreground">
                       <div className="mb-3 flex items-center gap-3">
@@ -722,7 +742,6 @@ function Index() {
                   )}
                 </div>
 
-                {/* Body (non-featured) */}
                 {!isFeatured && (
                   <div className="relative flex flex-1 flex-col gap-3 p-6">
                     <div className="flex items-center gap-3">
@@ -795,7 +814,6 @@ function Index() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section className="shine-box mx-auto mt-28 w-[min(1200px,calc(100%-2rem))] p-6 sm:p-10">
         <div className="relative overflow-hidden bg-primary px-8 py-16 text-primary-foreground sm:px-16 sm:py-24">
@@ -821,18 +839,20 @@ function Index() {
                   0328 4734463 · Mon – Sat, 10 AM to 7 PM
                 </li>
               </ul>
+              
+              {/* Unified Final CTA Buttons */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={WHATSAPP}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-colors hover:bg-accent/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
                 >
                   WhatsApp Now
                 </a>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider transition-colors hover:bg-primary-foreground/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/10"
                 >
                   Contact Adnan
                 </Link>
