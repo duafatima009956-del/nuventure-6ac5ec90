@@ -146,36 +146,56 @@ const gallery = [
 
 const homeTestimonials = [
   {
+<<<<<<< HEAD
     quote:
       "The team translated our rough ideas into a stunning, build-ready design. Every milestone was clear and the finish quality exceeded expectations.",
+=======
+    quote: "The team translated our rough ideas into a stunning, build-ready design. Every milestone was clear and the finish quality exceeded expectations.",
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     name: "M. Farooq",
     role: "Homeowner · DHA Lahore",
     rating: 5,
   },
   {
+<<<<<<< HEAD
     quote:
       "From the first 3D elevation to the final handover, we felt guided and informed. The site supervision made the whole process stress-free.",
+=======
+    quote: "From the first 3D elevation to the final handover, we felt guided and informed. The site supervision made the whole process stress-free.",
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     name: "Ayesha & Bilal",
     role: "Clients · Bahria Town Islamabad",
     rating: 5,
   },
   {
+<<<<<<< HEAD
     quote:
       "Their attention to detail and transparent communication gave us confidence from day one. The end result feels both luxurious and timeless.",
+=======
+    quote: "Their attention to detail and transparent communication gave us confidence from day one. The end result feels both luxurious and timeless.",
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     name: "Sana Karim",
     role: "Homeowner · Gulberg Lahore",
     rating: 5,
   },
   {
+<<<<<<< HEAD
     quote:
       "Nuventure brought our commercial plaza to life exactly as promised. The structural integrity and finishing are truly world-class.",
+=======
+    quote: "Nuventure brought our commercial plaza to life exactly as promised. The structural integrity and finishing are truly world-class.",
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     name: "Omar Shahid",
     role: "Investor · Faisal Town",
     rating: 5,
   },
   {
+<<<<<<< HEAD
     quote:
       "Adnan's personal involvement in our farmhouse project was a game changer. The modern design they proposed fits perfectly with nature.",
+=======
+    quote: "Adnan's personal involvement in our farmhouse project was a game changer. The modern design they proposed fits perfectly with nature.",
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     name: "Zainab Ali",
     role: "Farmhouse · Multan",
     rating: 5,
@@ -196,7 +216,11 @@ function Eyebrow({ children }: { children: string }) {
 function Index() {
   const [slide, setSlide] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
   useEffect(() => {
     const t = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 4500);
     return () => clearInterval(t);
@@ -245,7 +269,7 @@ function Index() {
           }
         }
       },
-      { threshold: [0, 0.5, 1] },
+      { threshold: [0, 0.5, 1] }
     );
     io.observe(v);
     return () => {
@@ -269,7 +293,7 @@ function Index() {
           }
         }
       },
-      { threshold: [0, 0.35, 0.6] },
+      { threshold: [0, 0.35, 0.6] }
     );
     cards.forEach((c) => io.observe(c));
     return () => io.disconnect();
@@ -458,9 +482,13 @@ function Index() {
               />
             </button>
             <div className="relative z-[4] mx-auto mt-6 w-fit rounded-full border border-accent/40 bg-card/70 px-5 py-2 text-center shadow-[0_10px_30px_-15px_hsl(var(--accent)/0.5)] backdrop-blur">
+<<<<<<< HEAD
               <p className="text-sm font-semibold tracking-wide text-accent sm:text-base">
                 Adnan Javed Paracha
               </p>
+=======
+              <p className="text-sm font-semibold tracking-wide text-accent sm:text-base">Adnan Javed Paracha</p>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">CEO</p>
             </div>
           </div>
@@ -496,9 +524,13 @@ function Index() {
                 <span className="h-px w-10 bg-accent/60" />
                 <div>
                   <p className="text-sm font-semibold text-accent">Adnan Javed Paracha</p>
+<<<<<<< HEAD
                   <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     CEO · Nuventure Constructions
                   </p>
+=======
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">CEO · Nuventure Constructions</p>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
                 </div>
               </div>
             </div>
@@ -509,6 +541,7 @@ function Index() {
       {/* Testimonials */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
         <div className="mx-auto max-w-3xl text-center">
+<<<<<<< HEAD
           <div className="flex justify-center">
             <Eyebrow>Client Stories</Eyebrow>
           </div>
@@ -518,6 +551,14 @@ function Index() {
           </h2>
         </div>
 
+=======
+          <div className="flex justify-center"><Eyebrow>Client Stories</Eyebrow></div>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Trusted by homeowners who value <span className="text-accent">clarity and craftsmanship.</span>
+          </h2>
+        </div>
+        
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
         <div className="mt-12">
           <TestimonialCarousel items={homeTestimonials} variant="home" />
         </div>
@@ -846,9 +887,13 @@ function Index() {
                 key={title}
                 className={`group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-border/70 bg-background transition-all duration-700 hover:-translate-y-1 hover:border-accent/50 ${layout}`}
               >
+<<<<<<< HEAD
                 <div
                   className={`relative overflow-hidden ${isFeatured ? "aspect-[4/5] lg:aspect-auto lg:flex-1" : "aspect-[16/10]"}`}
                 >
+=======
+                <div className={`relative overflow-hidden ${isFeatured ? "aspect-[4/5] lg:aspect-auto lg:flex-1" : "aspect-[16/10]"}`}>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
                   <img
                     src={img}
                     alt={title}
@@ -995,7 +1040,11 @@ function Index() {
                   0328 4734463 · Mon – Sat, 10 AM to 7 PM
                 </li>
               </ul>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
               {/* Unified Final CTA Buttons */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a

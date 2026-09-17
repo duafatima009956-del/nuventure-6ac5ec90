@@ -14,11 +14,15 @@ type TestimonialCarouselProps = {
   variant?: "default" | "home";
 };
 
+<<<<<<< HEAD
 export function TestimonialCarousel({
   items,
   className = "",
   variant = "default",
 }: TestimonialCarouselProps) {
+=======
+export function TestimonialCarousel({ items, className = "", variant = "default" }: TestimonialCarouselProps) {
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -71,11 +75,15 @@ export function TestimonialCarousel({
   const isHome = variant === "home";
 
   return (
+<<<<<<< HEAD
     <div
       className={`relative ${className}`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+=======
+    <div className={`relative ${className}`} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
       {/* Navigation Buttons */}
       <div className="mb-6 flex items-center justify-end gap-3">
         <button
@@ -115,9 +123,13 @@ export function TestimonialCarousel({
             >
               {/* Top: Quote Icon & Stars */}
               <div className="mb-4 flex items-center justify-between">
+<<<<<<< HEAD
                 <div
                   className={`flex h-10 w-10 items-center justify-center rounded-full ${isHome ? "bg-accent/20 text-accent" : "bg-accent/10 text-accent"}`}
                 >
+=======
+                <div className={`flex h-10 w-10 items-center justify-center rounded-full ${isHome ? "bg-accent/20 text-accent" : "bg-accent/10 text-accent"}`}>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
                   <Quote className="h-5 w-5" fill="currentColor" />
                 </div>
                 <div className="flex items-center gap-1 text-accent">
@@ -128,13 +140,18 @@ export function TestimonialCarousel({
               </div>
 
               {/* Quote Text */}
+<<<<<<< HEAD
               <p
                 className={`flex-1 text-sm leading-relaxed ${isHome ? "text-primary-foreground/90" : "text-foreground/90"}`}
               >
+=======
+              <p className={`flex-1 text-sm leading-relaxed ${isHome ? "text-primary-foreground/90" : "text-foreground/90"}`}>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
                 "{item.quote}"
               </p>
 
               {/* Author / Footer */}
+<<<<<<< HEAD
               <div
                 className={`mt-6 border-t pt-4 ${isHome ? "border-primary-foreground/10" : "border-border/60"}`}
               >
@@ -148,6 +165,11 @@ export function TestimonialCarousel({
                 >
                   {item.role}
                 </div>
+=======
+              <div className={`mt-6 border-t pt-4 ${isHome ? "border-primary-foreground/10" : "border-border/60"}`}>
+                <div className={`text-base font-bold ${isHome ? "text-accent" : "text-foreground"}`}>{item.name}</div>
+                <div className={`mt-1 text-sm ${isHome ? "text-primary-foreground/60" : "text-muted-foreground"}`}>{item.role}</div>
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
               </div>
             </article>
           );

@@ -12,7 +12,13 @@ export function BrandUpPopup() {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem(STORAGE_KEY)) return;
     setMounted(true);
+<<<<<<< HEAD
     const raf = requestAnimationFrame(() => requestAnimationFrame(() => setShow(true)));
+=======
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setShow(true)),
+    );
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
     return () => cancelAnimationFrame(raf);
   }, []);
 
@@ -60,5 +66,12 @@ export function BrandUpPopup() {
 
   if (!mounted) return null;
 
+<<<<<<< HEAD
   return <div></div>;
+=======
+  return (
+       <div>
+             </div>
+  );
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
 }

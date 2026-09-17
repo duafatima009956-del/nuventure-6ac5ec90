@@ -70,8 +70,13 @@ function ContactPage() {
             Let's build <span className="text-accent">something remarkable.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+<<<<<<< HEAD
             Free consultation · Instant cost estimate · HD 3D preview before construction. Reach us
             any way you prefer — our CEO personally reads every enquiry.
+=======
+            Free consultation · Instant cost estimate · HD 3D preview before construction.
+            Reach us any way you prefer — our CEO personally reads every enquiry.
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
           </p>
         </div>
       </section>

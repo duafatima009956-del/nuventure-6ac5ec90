@@ -133,6 +133,58 @@ const aboutTestimonials = [
   },
 ];
 
+// Total 8 testimonials with 'rating' field
+const aboutTestimonials = [
+  {
+    quote: "What stood out most was the honesty. We received clear updates, realistic timelines, and a finished home that felt even better than imagined.",
+    name: "Imran & Rabia",
+    role: "Luxury villa · Islamabad",
+    rating: 5,
+  },
+  {
+    quote: "The design team made our vision feel tangible before shovels hit the ground. The final execution was polished, efficient, and deeply thoughtful.",
+    name: "Nadia Malik",
+    role: "Commercial project · Lahore",
+    rating: 5,
+  },
+  {
+    quote: "Nuventure treated our home like it was their own. From architecture to finishing touches, every detail was handled with care.",
+    name: "Hassan Qureshi",
+    role: "Renovation · Rawalpindi",
+    rating: 5,
+  },
+  {
+    quote: "From the initial 3D elevation to the final handover, the process was seamless. Adnan's personal involvement gave us immense peace of mind.",
+    name: "Sarah & Ahmed",
+    role: "10 Marla Home · DHA Phase 6",
+    rating: 5,
+  },
+  {
+    quote: "They delivered our project ahead of schedule without compromising on quality. The structural integrity and finishing are top-notch.",
+    name: "Bilal Khan",
+    role: "Basement Extension · Gulberg",
+    rating: 5,
+  },
+  {
+    quote: "We wanted a contemporary space that blended with nature. Nuventure’s design team captured our vision perfectly. Truly exceptional work.",
+    name: "Fatima Sheikh",
+    role: "Modern Farmhouse · Multan",
+    rating: 5,
+  },
+  {
+    quote: "As a commercial investor, timelines and budgets are critical. Nuventure met every milestone transparently. Highly recommended for commercial projects.",
+    name: "Usman Tariq",
+    role: "Plaza Construction · Bahria Town",
+    rating: 5,
+  },
+  {
+    quote: "The transparency in material procurement was a breath of fresh air. No hidden costs, just honest craftsmanship and beautiful results.",
+    name: "Ayesha & Junaid",
+    role: "1 Kanal Build · Islamabad",
+    rating: 5,
+  },
+];
+
 function AboutPage() {
   return (
     <div className="bg-background">
@@ -173,12 +225,16 @@ function AboutPage() {
             >
               View Our Work <ArrowRight className="h-4 w-4" />
             </Link>
+<<<<<<< HEAD
             <a
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-bold text-accent hover:bg-accent/10"
             >
+=======
+            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-bold text-accent hover:bg-accent/10">
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
               💬 Talk to CEO
             </a>
           </div>
@@ -271,6 +327,7 @@ function AboutPage() {
       {/* Testimonials - Using TestimonialCarousel Component */}
       <section className="mx-auto w-[min(1200px,calc(100%-2rem))] py-16 sm:py-24">
         <div className="text-center">
+<<<<<<< HEAD
           <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
             Client Voices
           </span>
@@ -281,6 +338,15 @@ function AboutPage() {
           </p>
         </div>
 
+=======
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Client Voices</span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl">Why clients choose Nuventure</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Don't just take our word for it. Hear from families and businesses who trusted Nuventure with their dream spaces.
+          </p>
+        </div>
+        
+>>>>>>> 67b47d309ee2b8e73c66f4a43c24c23adbd60c4a
         {/* Integrated Auto-scrolling Carousel with < > buttons */}
         <TestimonialCarousel items={aboutTestimonials} className="mt-12" />
       </section>
