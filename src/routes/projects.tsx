@@ -28,19 +28,42 @@ export const Route = createFileRoute("/projects")({
           "Explore Nuventure's signature projects — luxury homes, commercial plazas and HD 3D elevations all over Pakistan.",
       },
       { property: "og:title", content: "Our Signature Work — Nuventure Constructions" },
-      { property: "og:description", content: "Modern homes & photo-realistic 3D elevations all over Pakistan." },
+      {
+        property: "og:description",
+        content: "Modern homes & photo-realistic 3D elevations all over Pakistan.",
+      },
     ],
   }),
   component: ProjectsPage,
 });
 
 const highlights = [
-  { badge: "🎨 3D Elevation", title: "Modern Villa Render", desc: "Photo-real HD 3D front elevation · Lahore" },
-  { badge: "🏗️ Live Build", title: "Faisal Town Residence", desc: "Grey structure in progress · Islamabad" },
+  {
+    badge: "🎨 3D Elevation",
+    title: "Modern Villa Render",
+    desc: "Photo-real HD 3D front elevation · Lahore",
+  },
+  {
+    badge: "🏗️ Live Build",
+    title: "Faisal Town Residence",
+    desc: "Grey structure in progress · Islamabad",
+  },
   { badge: "✨ Turnkey", title: "DHA Family Home", desc: "Design to handover · Lahore" },
-  { badge: "🏢 Commercial", title: "Ferozepur Road Plaza", desc: "Glass-front commercial plaza · Lahore" },
-  { badge: "🔑 Handover", title: "Faisal Town Villa", desc: "Complete key-in-hand delivery · Islamabad" },
-  { badge: "🚧 Renovation", title: "Pak-Arab Housing Upgrade", desc: "Full modern transformation · Lahore" },
+  {
+    badge: "🏢 Commercial",
+    title: "Ferozepur Road Plaza",
+    desc: "Glass-front commercial plaza · Lahore",
+  },
+  {
+    badge: "🔑 Handover",
+    title: "Faisal Town Villa",
+    desc: "Complete key-in-hand delivery · Islamabad",
+  },
+  {
+    badge: "🚧 Renovation",
+    title: "Pak-Arab Housing Upgrade",
+    desc: "Full modern transformation · Lahore",
+  },
 ];
 
 function ShowcaseVideo({ src }: { src: string }) {
@@ -93,8 +116,14 @@ function ShowcaseVideo({ src }: { src: string }) {
 
   return (
     <div ref={wrapRef} className="relative">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-accent/40 blur-3xl" />
-      <div aria-hidden="true" className="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-accent/30 blur-3xl" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-accent/40 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-10 -right-10 h-56 w-56 rounded-full bg-accent/30 blur-3xl"
+      />
       <div className="group relative overflow-hidden rounded-3xl border border-accent/30 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.55),0_0_40px_-10px_hsl(var(--accent)/0.35)]">
         <video
           ref={videoRef}
@@ -109,8 +138,17 @@ function ShowcaseVideo({ src }: { src: string }) {
           className="block h-auto w-full"
         />
         <div className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-          <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
-          <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+          <img
+            src={logo}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-6 object-contain"
+          />
+          <span className="text-[10px] font-black uppercase tracking-widest text-accent">
+            Nuventure
+          </span>
         </div>
         <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 transition-opacity duration-500 group-hover:opacity-100 opacity-70" />
       </div>
@@ -143,17 +181,29 @@ function ProjectsPage() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {previewProjects.map((img) => (
-          <div key={img.alt} className="shine-box group relative overflow-hidden rounded-2xl border border-accent/25">
+          <div
+            key={img.alt}
+            className="shine-box group relative overflow-hidden rounded-2xl border border-accent/25"
+          >
             <img
               src={img.src}
               alt={img.alt}
               loading="lazy"
-                decoding="async"
+              decoding="async"
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="h-6 w-6 object-contain"
+              />
+              <span className="text-[10px] font-black uppercase tracking-widest text-accent">
+                Nuventure
+              </span>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-4 pt-10 opacity-0 transition-opacity group-hover:opacity-100">
               <p className="text-xs font-semibold">{img.alt}</p>
@@ -168,17 +218,29 @@ function ProjectsPage() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {restProjects.map((img) => (
-          <div key={img.alt} className="shine-box group relative overflow-hidden rounded-2xl border border-accent/25">
+          <div
+            key={img.alt}
+            className="shine-box group relative overflow-hidden rounded-2xl border border-accent/25"
+          >
             <img
               src={img.src}
               alt={img.alt}
               loading="lazy"
-                decoding="async"
+              decoding="async"
               className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="h-6 w-6 object-contain"
+              />
+              <span className="text-[10px] font-black uppercase tracking-widest text-accent">
+                Nuventure
+              </span>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-4 pt-10 opacity-0 transition-opacity group-hover:opacity-100">
               <p className="text-xs font-semibold">{img.alt}</p>
@@ -192,7 +254,10 @@ function ProjectsPage() {
         <h2 className="mt-1 text-3xl font-black sm:text-4xl">Portfolio Showcase</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {highlights.map((h) => (
-            <div key={h.title} className="shine-box rounded-2xl border border-accent/25 bg-card/50 p-6 transition-colors hover:border-accent/60">
+            <div
+              key={h.title}
+              className="shine-box rounded-2xl border border-accent/25 bg-card/50 p-6 transition-colors hover:border-accent/60"
+            >
               <span className="text-xs font-bold text-accent">{h.badge}</span>
               <h3 className="mt-2 font-extrabold">{h.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{h.desc}</p>

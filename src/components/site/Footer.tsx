@@ -26,41 +26,60 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-white/80">
-            A full-service construction firm founded by Adnan Javed Paracha — serving clients
-            all over Pakistan with architecture, 3D elevations, grey structure and turnkey delivery.
+            A full-service construction firm founded by Adnan Javed Paracha — serving clients all
+            over Pakistan with architecture, 3D elevations, grey structure and turnkey delivery.
           </p>
           <div className="mt-6">
-            <h4 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Follow us</h4>
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+              Follow us
+            </h4>
             <SocialIcons className="mt-3" />
           </div>
         </div>
 
         <div>
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Explore</h3>
+          <h3 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+            Explore
+          </h3>
           <nav className="mt-5 flex flex-col gap-2.5 text-sm">
-            <Link to="/" className="text-white/75 transition-colors hover:text-white">Home</Link>
-            <Link to="/about" className="text-white/75 transition-colors hover:text-white">About</Link>
-            <Link to="/services" className="text-white/75 transition-colors hover:text-white">Services</Link>
-            <Link to="/projects" className="text-white/75 transition-colors hover:text-white">Projects</Link>
-            <Link to="/contact" className="text-white/75 transition-colors hover:text-white">Contact</Link>
+            <Link to="/" className="text-white/75 transition-colors hover:text-white">
+              Home
+            </Link>
+            <Link to="/about" className="text-white/75 transition-colors hover:text-white">
+              About
+            </Link>
+            <Link to="/services" className="text-white/75 transition-colors hover:text-white">
+              Services
+            </Link>
+            <Link to="/projects" className="text-white/75 transition-colors hover:text-white">
+              Projects
+            </Link>
+            <Link to="/contact" className="text-white/75 transition-colors hover:text-white">
+              Contact
+            </Link>
           </nav>
         </div>
 
         <div>
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Contact</h3>
+          <h3 className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+            Contact
+          </h3>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-{/* Salam Tower,Block A Markez Faisal Town Islamabad */}
-            Office No. 201, 2nd Floor, Salam Tower,<br /> Block A Markez Faisal Islamabad
+              {/* Salam Tower,Block A Markez Faisal Town Islamabad */}
+              Office No. 201, 2nd Floor, Salam Tower,
+              <br /> Block A Markez Faisal Islamabad
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="h-4 w-4 shrink-0 text-accent" />
-              <a href={WHATSAPP} className="hover:text-white">0328 4734463</a>
+              <a href={WHATSAPP} className="hover:text-white">
+                0328 4734463
+              </a>
             </li>
             <li className="flex items-center gap-2.5">
               <User className="h-4 w-4 shrink-0 text-accent" />
-              Adnan Javed Paracha · Founder
+              Adnan Javed Paracha · CEO
             </li>
             <li className="flex items-center gap-2.5">
               <MessageCircle className="h-4 w-4 shrink-0 text-accent" />
@@ -92,6 +111,5 @@ export function Footer() {
         </a>
       </div>
     </footer>
-
   );
 }

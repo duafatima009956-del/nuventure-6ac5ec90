@@ -20,8 +20,8 @@ export function ComingSoon({ pageName }: { pageName: string }) {
       </h1>
 
       <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">
-        Our team is polishing this section with premium designs, real project shots
-        and detailed information. It will be live very soon — thank you for your patience.
+        Our team is polishing this section with premium designs, real project shots and detailed
+        information. It will be live very soon — thank you for your patience.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

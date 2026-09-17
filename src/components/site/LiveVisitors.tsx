@@ -16,9 +16,10 @@ export function LiveVisitors({ className = "" }: { className?: string }) {
       setCount((prev) => {
         const base = prev ?? randomCount();
         // small drift ±7, then clamp; occasionally jump
-        const drift = Math.random() < 0.15
-          ? Math.floor(Math.random() * 40) - 20
-          : Math.floor(Math.random() * 15) - 7;
+        const drift =
+          Math.random() < 0.15
+            ? Math.floor(Math.random() * 40) - 20
+            : Math.floor(Math.random() * 15) - 7;
         let next = base + drift;
         if (next < MIN) next = MIN + Math.floor(Math.random() * 10);
         if (next > MAX) next = MAX - Math.floor(Math.random() * 10);

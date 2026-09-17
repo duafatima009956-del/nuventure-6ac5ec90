@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Award, Building2, Eye, Gem, HardHat, MapPin, ShieldCheck, Sparkles, Target, Users } from "lucide-react";
+import { ArrowRight, Eye, Gem, ShieldCheck, Sparkles, Target } from "lucide-react";
 import { CountOnView } from "@/components/site/CountUpStat";
+import { TestimonialCarousel } from "@/components/site/TestimonialCarousel"; // Imported the carousel
 
 const ceoImage = "/ceo-adnan-paracha.webp";
 const heroImg = "/nv-hero-2.webp";
@@ -27,17 +28,109 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { Icon: Target, title: "Precision by Design", desc: "Every layout, elevation and detail is engineered before we break ground — no surprises on site." },
-  { Icon: ShieldCheck, title: "Uncompromised Quality", desc: "A++ materials, verified suppliers and third-party checks at every structural milestone." },
-  { Icon: Eye, title: "Full Transparency", desc: "Clear timelines, itemised costs and weekly site updates — you always know where your money is going." },
-  { Icon: Gem, title: "Craftsmanship First", desc: "We deliver homes we would live in ourselves — clean lines, honest materials, luxury finishes." },
+  {
+    Icon: Target,
+    title: "Precision by Design",
+    desc: "Every layout, elevation and detail is engineered before we break ground — no surprises on site.",
+  },
+  {
+    Icon: ShieldCheck,
+    title: "Uncompromised Quality",
+    desc: "A++ materials, verified suppliers and third-party checks at every structural milestone.",
+  },
+  {
+    Icon: Eye,
+    title: "Full Transparency",
+    desc: "Clear timelines, itemised costs and weekly site updates — you always know where your money is going.",
+  },
+  {
+    Icon: Gem,
+    title: "Craftsmanship First",
+    desc: "We deliver homes we would live in ourselves — clean lines, honest materials, luxury finishes.",
+  },
 ];
 
 const milestones = [
-  { year: "2015", title: "Founded in Lahore", desc: "Adnan Javed Paracha establishes Nuventure with a single design-build studio." },
-  { year: "2018", title: "3D Elevation Studio", desc: "In-house HD 3D visualization team launched — clients approve every façade before construction." },
-  { year: "2021", title: "Islamabad Expansion", desc: "Second regional office opens; portfolio grows to include commercial plazas and luxury villas." },
-  { year: "2024", title: "120+ Projects Delivered", desc: "Trusted across DHA, Bahria, Faisal Town, Gulberg and the twin cities." },
+  {
+    year: "2015",
+    title: "Founded in Lahore",
+    desc: "Adnan Javed Paracha establishes Nuventure with a single design-build studio.",
+  },
+  {
+    year: "2018",
+    title: "3D Elevation Studio",
+    desc: "In-house HD 3D visualization team launched — clients approve every façade before construction.",
+  },
+  {
+    year: "2021",
+    title: "Islamabad Expansion",
+    desc: "Second regional office opens; portfolio grows to include commercial plazas and luxury villas.",
+  },
+  {
+    year: "2024",
+    title: "120+ Projects Delivered",
+    desc: "Trusted across DHA, Bahria, Faisal Town, Gulberg and the twin cities.",
+  },
+];
+
+// Total 8 testimonials with 'rating' field
+const aboutTestimonials = [
+  {
+    quote:
+      "What stood out most was the honesty. We received clear updates, realistic timelines, and a finished home that felt even better than imagined.",
+    name: "Imran & Rabia",
+    role: "Luxury villa · Islamabad",
+    rating: 5,
+  },
+  {
+    quote:
+      "The design team made our vision feel tangible before shovels hit the ground. The final execution was polished, efficient, and deeply thoughtful.",
+    name: "Nadia Malik",
+    role: "Commercial project · Lahore",
+    rating: 5,
+  },
+  {
+    quote:
+      "Nuventure treated our home like it was their own. From architecture to finishing touches, every detail was handled with care.",
+    name: "Hassan Qureshi",
+    role: "Renovation · Rawalpindi",
+    rating: 5,
+  },
+  {
+    quote:
+      "From the initial 3D elevation to the final handover, the process was seamless. Adnan's personal involvement gave us immense peace of mind.",
+    name: "Sarah & Ahmed",
+    role: "10 Marla Home · DHA Phase 6",
+    rating: 5,
+  },
+  {
+    quote:
+      "They delivered our project ahead of schedule without compromising on quality. The structural integrity and finishing are top-notch.",
+    name: "Bilal Khan",
+    role: "Basement Extension · Gulberg",
+    rating: 5,
+  },
+  {
+    quote:
+      "We wanted a contemporary space that blended with nature. Nuventure’s design team captured our vision perfectly. Truly exceptional work.",
+    name: "Fatima Sheikh",
+    role: "Modern Farmhouse · Multan",
+    rating: 5,
+  },
+  {
+    quote:
+      "As a commercial investor, timelines and budgets are critical. Nuventure met every milestone transparently. Highly recommended for commercial projects.",
+    name: "Usman Tariq",
+    role: "Plaza Construction · Bahria Town",
+    rating: 5,
+  },
+  {
+    quote:
+      "The transparency in material procurement was a breath of fresh air. No hidden costs, just honest craftsmanship and beautiful results.",
+    name: "Ayesha & Junaid",
+    role: "1 Kanal Build · Islamabad",
+    rating: 5,
+  },
 ];
 
 function AboutPage() {
@@ -46,7 +139,14 @@ function AboutPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Modern villa by Nuventure Constructions" loading="eager" decoding="async" fetchPriority="high" className="h-full w-full object-cover opacity-25" />
+          <img
+            src={heroImg}
+            alt="Modern villa by Nuventure Constructions"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            className="h-full w-full object-cover opacity-25"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="relative mx-auto w-[min(1200px,calc(100%-2rem))] py-20 sm:py-28">
@@ -59,20 +159,27 @@ function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Nuventure Constructions is a full-service design-build firm led by{" "}
-            <strong className="text-foreground">Adnan Javed Paracha</strong>. Each
-            project is dedicated to our civil engineer / site engineer exclusively,
-            who is responsible to look after the whole project under the direction
-            of our CEO during each step. From contemporary architecture and
-            photo-real 3D elevations to grey structure and turnkey handover — we
-            deliver homes all over Pakistan that are built to last and designed to
+            <strong className="text-foreground">Adnan Javed Paracha</strong>. Each project is
+            dedicated to our civil engineer / site engineer exclusively, who is responsible to look
+            after the whole project under the direction of our CEO during each step. From
+            contemporary architecture and photo-real 3D elevations to grey structure and turnkey
+            handover — we deliver homes all over Pakistan that are built to last and designed to
             inspire.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/projects" className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]">
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]"
+            >
               View Our Work <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-bold text-accent hover:bg-accent/10">
-              💬 Talk to Founder
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-bold text-accent hover:bg-accent/10"
+            >
+              💬 Talk to CEO
             </a>
           </div>
         </div>
@@ -91,7 +198,9 @@ function AboutPage() {
               <div className="text-4xl font-black text-accent sm:text-5xl">
                 <CountOnView value={s.v} />
               </div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{s.l}</div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                {s.l}
+              </div>
             </div>
           ))}
         </div>
@@ -104,28 +213,30 @@ function AboutPage() {
             <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-accent/40 to-transparent blur-2xl" />
             <img
               src={ceoImage}
-              alt="Adnan Javed Paracha — Founder & CEO, Nuventure Constructions"
+              alt="Adnan Javed Paracha — CEO, Nuventure Constructions"
               className="aspect-[4/5] w-full rounded-2xl object-cover shadow-2xl"
             />
           </div>
           <div>
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Founder &amp; CEO</span>
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">CEO</span>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">Adnan Javed Paracha</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              With over a decade in construction and design, Adnan Javed Paracha founded
-              Nuventure with a single conviction — that Pakistani families deserve homes
-              built with the same craftsmanship, transparency and modern sensibility you
-              would expect from the world's finest firms.
+              With over a decade in construction and design, Adnan Javed Paracha founded Nuventure
+              with a single conviction — that Pakistani families deserve homes built with the same
+              craftsmanship, transparency and modern sensibility you would expect from the world's
+              finest firms.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Every project is personally supervised. Every material is checked. Every
-              client meeting begins with the same question: "What kind of legacy do you
-              want to leave behind?" That answer becomes the blueprint.
+              Every project is personally supervised. Every material is checked. Every client
+              meeting begins with the same question: "What kind of legacy do you want to leave
+              behind?" That answer becomes the blueprint.
             </p>
             <blockquote className="mt-6 border-l-4 border-accent bg-accent/5 p-5 italic text-foreground">
-              "We don't just build houses — we build the memories your family will live
-              inside for generations."
-              <div className="mt-3 text-xs font-bold not-italic uppercase tracking-widest text-accent">— Adnan Javed Paracha</div>
+              "We don't just build houses — we build the memories your family will live inside for
+              generations."
+              <div className="mt-3 text-xs font-bold not-italic uppercase tracking-widest text-accent">
+                — Adnan Javed Paracha
+              </div>
             </blockquote>
           </div>
         </div>
@@ -135,12 +246,17 @@ function AboutPage() {
       <section className="border-y border-border/60 bg-secondary/30 py-16 sm:py-20">
         <div className="mx-auto w-[min(1200px,calc(100%-2rem))]">
           <div className="text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">What Guides Us</span>
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
+              What Guides Us
+            </span>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">Our Core Values</h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ Icon, title, desc }) => (
-              <div key={title} className="shine-box group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-accent/60">
+              <div
+                key={title}
+                className="shine-box group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-accent/60"
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <Icon className="h-6 w-6" />
                 </div>
@@ -152,10 +268,29 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Testimonials - Using TestimonialCarousel Component */}
+      <section className="mx-auto w-[min(1200px,calc(100%-2rem))] py-16 sm:py-24">
+        <div className="text-center">
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
+            Client Voices
+          </span>
+          <h2 className="mt-3 text-3xl font-black sm:text-4xl">Why clients choose Nuventure</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Don't just take our word for it. Hear from families and businesses who trusted Nuventure
+            with their dream spaces.
+          </p>
+        </div>
+
+        {/* Integrated Auto-scrolling Carousel with < > buttons */}
+        <TestimonialCarousel items={aboutTestimonials} className="mt-12" />
+      </section>
+
       {/* Journey */}
       <section className="mx-auto w-[min(1000px,calc(100%-2rem))] py-16 sm:py-24">
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Our Journey</span>
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
+            Our Journey
+          </span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">From a studio to a landmark firm</h2>
         </div>
         <div className="relative mt-12 space-y-8 border-l-2 border-accent/40 pl-8">
@@ -164,7 +299,9 @@ function AboutPage() {
               <span className="absolute -left-[42px] flex h-6 w-6 items-center justify-center rounded-full border-2 border-accent bg-background">
                 <span className="h-2 w-2 rounded-full bg-accent" />
               </span>
-              <div className="text-xs font-bold uppercase tracking-widest text-accent">{m.year}</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-accent">
+                {m.year}
+              </div>
               <h3 className="mt-1 text-xl font-bold">{m.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{m.desc}</p>
             </div>
@@ -178,14 +315,20 @@ function AboutPage() {
           <Sparkles className="mx-auto h-10 w-10 text-accent" />
           <h2 className="mt-4 text-3xl font-black sm:text-4xl">Ready to build your legacy?</h2>
           <p className="mx-auto mt-3 max-w-xl leading-relaxed text-muted-foreground">
-            Book a free consultation with our design team — get your plot analysis, 3D
-            concept and transparent pricing in one sitting.
+            Book a free consultation with our design team — get your plot analysis, 3D concept and
+            transparent pricing in one sitting.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]"
+            >
               Book Free Consultation <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3 text-sm font-bold text-accent hover:bg-accent/10">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3 text-sm font-bold text-accent hover:bg-accent/10"
+            >
               Explore Services
             </Link>
           </div>

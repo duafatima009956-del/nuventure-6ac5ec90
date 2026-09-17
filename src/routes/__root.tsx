@@ -19,6 +19,7 @@ import { OfferPopup } from "@/components/site/OfferPopup";
 import { CostCalculator } from "@/components/site/CostCalculator";
 import { SplashIntro } from "@/components/site/SplashIntro";
 import { LiveVisitors } from "@/components/site/LiveVisitors";
+import { BrandUpPopup } from "@/components/site/BrandUpPopup";
 
 function NotFoundComponent() {
   return (
@@ -92,7 +93,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Nuventure Constructions — founded by Adnan Javed Paracha. Contemporary design, premium build quality, HD 3D elevations and turnkey delivery all over Pakistan.",
       },
       { name: "author", content: "Nuventure Constructions" },
-      { property: "og:title", content: "Nuventure Constructions — Contemporary Design, Premium Build Quality" },
+      {
+        property: "og:title",
+        content: "Nuventure Constructions — Contemporary Design, Premium Build Quality",
+      },
       {
         property: "og:description",
         content:
@@ -138,18 +142,9 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const IS_SITE_CLOSED = true;
   const { queryClient } = Route.useRouteContext();
 
   useEffect(() => {
-    if (IS_SITE_CLOSED) {
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = originalOverflow;
-      };
-    }
-
     let raf = 0;
     let current: Element | null = null;
 
@@ -198,22 +193,7 @@ function RootComponent() {
       window.removeEventListener("resize", onScroll);
       document.removeEventListener("click", onClick, true);
     };
-  }, [IS_SITE_CLOSED]);
-
-  if (IS_SITE_CLOSED) {
-    return (
-      <QueryClientProvider client={queryClient}>
-        <div className="fixed inset-0 z-[99999] w-[100vw] h-[100vh] overflow-hidden bg-[#07090e] flex items-center justify-center p-4">
-          <img
-            src="/error/error.jpeg"
-            alt="Maintenance mode"
-            className="max-h-[90vh] max-w-[90vw] w-auto h-auto rounded-2xl object-contain shadow-[0_30px_120px_rgba(0,0,0,0.35)]"
-            loading="eager"
-          />
-        </div>
-      </QueryClientProvider>
-    );
-  }
+  }, []);
 
   const pathname = useRouter().state.location.pathname;
   const isGate = pathname === "/unlock";
@@ -233,6 +213,7 @@ function RootComponent() {
           <Outlet />
         </main>
         {!isGate && <Footer />}
+        {!isGate && splashDone && <BrandUpPopup />}
         {!isGate && splashDone && <WhatsAppFloat />}
         {!isGate && splashDone && <OfferPopup />}
         {!isGate && splashDone && <CostCalculator />}
@@ -241,4 +222,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

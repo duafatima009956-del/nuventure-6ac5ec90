@@ -41,7 +41,13 @@ const offices = [
 ];
 
 function ContactPage() {
-  const [form, setForm] = useState({ name: "", phone: "", city: "Lahore", service: "Grey Structure A++", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    city: "Lahore",
+    service: "Grey Structure A++",
+    message: "",
+  });
 
   const openWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,8 +70,8 @@ function ContactPage() {
             Let's build <span className="text-accent">something remarkable.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Free consultation · Instant cost estimate · HD 3D preview before construction.
-            Reach us any way you prefer — our founder personally reads every enquiry.
+            Free consultation · Instant cost estimate · HD 3D preview before construction. Reach us
+            any way you prefer — our CEO personally reads every enquiry.
           </p>
         </div>
       </section>
@@ -83,9 +89,13 @@ function ContactPage() {
               <MessageCircle className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">WhatsApp</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                WhatsApp
+              </div>
               <div className="mt-1 text-lg font-bold text-foreground">{PHONE_DISPLAY}</div>
-              <div className="mt-1 text-xs text-muted-foreground">Fastest reply · usually within 5 minutes</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                Fastest reply · usually within 5 minutes
+              </div>
             </div>
           </a>
           <a
@@ -96,7 +106,9 @@ function ContactPage() {
               <Phone className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Call Us</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                Call Us
+              </div>
               <div className="mt-1 text-lg font-bold text-foreground">{PHONE_DISPLAY}</div>
               <div className="mt-1 text-xs text-muted-foreground">Mon – Sat · 10 AM – 8 PM</div>
             </div>
@@ -109,9 +121,13 @@ function ContactPage() {
               <Mail className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                Email
+              </div>
               <div className="mt-1 break-all text-sm font-bold text-foreground">{EMAIL}</div>
-              <div className="mt-1 text-xs text-muted-foreground">For proposals &amp; documents</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                For proposals &amp; documents
+              </div>
             </div>
           </a>
         </div>
@@ -127,12 +143,15 @@ function ContactPage() {
           >
             <h2 className="text-2xl font-black">Request a Free Quote</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Fill this and hit send — your request opens directly in WhatsApp for the fastest reply.
+              Fill this and hit send — your request opens directly in WhatsApp for the fastest
+              reply.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <label className="block">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Full Name</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  Full Name
+                </span>
                 <input
                   required
                   value={form.name}
@@ -142,7 +161,9 @@ function ContactPage() {
                 />
               </label>
               <label className="block">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Phone</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  Phone
+                </span>
                 <input
                   required
                   type="tel"
@@ -153,7 +174,9 @@ function ContactPage() {
                 />
               </label>
               <label className="block">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">City</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  City
+                </span>
                 <select
                   value={form.city}
                   onChange={(e) => setForm({ ...form, city: e.target.value })}
@@ -166,7 +189,9 @@ function ContactPage() {
                 </select>
               </label>
               <label className="block">
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Interested In</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                  Interested In
+                </span>
                 <select
                   value={form.service}
                   onChange={(e) => setForm({ ...form, service: e.target.value })}
@@ -183,7 +208,9 @@ function ContactPage() {
             </div>
 
             <label className="mt-4 block">
-              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Project Details</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                Project Details
+              </span>
               <textarea
                 rows={4}
                 value={form.message}

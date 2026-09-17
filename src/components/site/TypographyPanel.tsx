@@ -51,7 +51,8 @@ export function TypographyPanel() {
       } else {
         apply(DEFAULTS);
       }
-    } catch {
+    } catch (error) {
+      console.warn("Typography settings could not be loaded; resetting to defaults.", error);
       apply(DEFAULTS);
     }
   }, []);
@@ -62,7 +63,9 @@ export function TypographyPanel() {
     apply(next);
     try {
       localStorage.setItem(KEY, JSON.stringify(next));
-    } catch {}
+    } catch (error) {
+      console.warn("Typography settings could not be saved.", error);
+    }
   }
 
   function reset() {
@@ -70,7 +73,9 @@ export function TypographyPanel() {
     apply(DEFAULTS);
     try {
       localStorage.removeItem(KEY);
-    } catch {}
+    } catch (error) {
+      console.warn("Typography settings could not be reset.", error);
+    }
   }
 
   return (

@@ -120,9 +120,13 @@ export function MovingGallery() {
         <div>
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-accent" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">Recent Work</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+              Recent Work
+            </span>
           </div>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">On-site &amp; delivered</h2>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            On-site &amp; delivered
+          </h2>
         </div>
         <p className="hidden max-w-xs text-xs text-muted-foreground sm:block">
           Drag the reel to browse. Tap any image to view in full.
@@ -163,8 +167,18 @@ export function MovingGallery() {
             <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             {/* Corner watermark badge */}
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" draggable={false} className="h-5 w-5 object-contain" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="h-5 w-5 object-contain"
+              />
+              <span className="text-[9px] font-black uppercase tracking-widest text-accent">
+                Nuventure
+              </span>
             </div>
           </button>
         ))}
@@ -177,26 +191,38 @@ export function MovingGallery() {
         >
           <button
             aria-label="Close"
-            onClick={(e) => { e.stopPropagation(); setLightbox(null); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox(null);
+            }}
             className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <X className="h-5 w-5" />
           </button>
           <button
             aria-label="Previous"
-            onClick={(e) => { e.stopPropagation(); nav(-1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nav(-1);
+            }}
             className="absolute left-2 sm:left-6 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             aria-label="Next"
-            onClick={(e) => { e.stopPropagation(); nav(1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nav(1);
+            }}
             className="absolute right-2 sm:right-6 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
-          <div className="relative max-h-[85vh] w-[min(1100px,95vw)]" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-h-[85vh] w-[min(1100px,95vw)]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={images[lightbox].src}
               alt={images[lightbox].alt}
@@ -204,8 +230,17 @@ export function MovingGallery() {
               className="mx-auto max-h-[85vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl animate-magic-pop"
             />
             <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" className="h-6 w-6 object-contain" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="h-6 w-6 object-contain"
+              />
+              <span className="text-[10px] font-black uppercase tracking-widest text-accent">
+                Nuventure
+              </span>
             </div>
             <p className="mt-3 text-center text-sm text-white/80">{images[lightbox].alt}</p>
           </div>

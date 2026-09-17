@@ -1,5 +1,14 @@
 import { useMemo, useState } from "react";
-import { Calculator, X, Phone, MessageCircle, Hammer, Building2, FileText, ZoomIn } from "lucide-react";
+import {
+  Calculator,
+  X,
+  Phone,
+  MessageCircle,
+  Hammer,
+  Building2,
+  FileText,
+  ZoomIn,
+} from "lucide-react";
 
 const materialsSpec = "/nv-materials-spec.webp";
 const greyServices = "/nv-grey-services.webp";
@@ -51,8 +60,10 @@ export function CostCalculator() {
     pkg === "finishing"
       ? `${PACKAGES.finishing.label} — ${FINISH_TIERS[finishTier].label}`
       : PACKAGES.grey.label;
-  const total = useMemo(() => currentRate * (Number.isFinite(area) ? area : 0), [currentRate, area]);
-  
+  const total = useMemo(
+    () => currentRate * (Number.isFinite(area) ? area : 0),
+    [currentRate, area],
+  );
 
   const close = () => {
     setClosing(true);
@@ -81,7 +92,9 @@ export function CostCalculator() {
           <Calculator className="h-5 w-5" strokeWidth={2.6} />
         </span>
         <span className="relative text-left text-[10px] font-black uppercase leading-[1.05] tracking-[0.14em] text-primary">
-          Cost<br />Calculator
+          Cost
+          <br />
+          Calculator
         </span>
       </button>
 
@@ -138,7 +151,8 @@ export function CostCalculator() {
                 </div>
               </div>
               <p className="mt-3 max-w-md text-xs text-primary-foreground/75 sm:text-sm">
-                Get an instant estimate for your dream home. Choose a package and enter covered area.
+                Get an instant estimate for your dream home. Choose a package and enter covered
+                area.
               </p>
             </div>
 
@@ -167,12 +181,16 @@ export function CostCalculator() {
                       >
                         <span
                           className={`flex h-9 w-9 items-center justify-center rounded-lg ${
-                            active ? "bg-accent text-accent-foreground" : "bg-primary text-primary-foreground"
+                            active
+                              ? "bg-accent text-accent-foreground"
+                              : "bg-primary text-primary-foreground"
                           }`}
                         >
                           <Icon className="h-4 w-4" />
                         </span>
-                        <span className={`mt-2 text-[11px] font-bold uppercase tracking-wider ${active ? "text-primary-foreground" : "text-foreground"}`}>
+                        <span
+                          className={`mt-2 text-[11px] font-bold uppercase tracking-wider ${active ? "text-primary-foreground" : "text-foreground"}`}
+                        >
                           {p.label}
                         </span>
                       </button>
@@ -238,7 +256,9 @@ export function CostCalculator() {
                             <span className="mt-1.5 text-[11px] font-black uppercase tracking-wider">
                               {t.label}
                             </span>
-                            <span className={`text-[10px] font-bold ${active ? "text-accent" : "text-primary"}`}>
+                            <span
+                              className={`text-[10px] font-bold ${active ? "text-accent" : "text-primary"}`}
+                            >
                               ₨{t.rate.toLocaleString()}/sqft
                             </span>
                           </button>
@@ -365,7 +385,7 @@ export function CostCalculator() {
             </div>
             <div className="max-h-[75vh] overflow-y-auto bg-white">
               <img
-                 src={showSpec === "grey" ? greyServices : materialsSpec}
+                src={showSpec === "grey" ? greyServices : materialsSpec}
                 alt={
                   showSpec === "grey"
                     ? "Nuventure Constructions grey structure services specification"

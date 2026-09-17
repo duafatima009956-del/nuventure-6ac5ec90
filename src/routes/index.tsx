@@ -1,9 +1,28 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Building2, HardHat, Ruler, Hammer, Layers, KeyRound, MapPin, Phone, Target, Eye, Gem, Check, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Building2,
+  HardHat,
+  Ruler,
+  Hammer,
+  Layers,
+  KeyRound,
+  MapPin,
+  Phone,
+  Target,
+  Eye,
+  Gem,
+  Check,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CountOnView } from "@/components/site/CountUpStat";
 import { MovingGallery } from "@/components/site/MovingGallery";
 import { WhyChooseCarousel } from "@/components/site/WhyChooseCarousel";
+import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
+
 const heroVideo = { url: "/nv-hero-video.mp4" };
 const legacyBanner = "/nv-legacy-banner.webp";
 const greyStructureImg = "/nv-grey-structure.webp";
@@ -39,6 +58,7 @@ const heroSlides = [
     desc: "Direct oversight, transparent timelines and premium materials — the standard behind 120+ delivered projects.",
   },
 ];
+
 const g1 = "/nv-1.webp";
 const g3 = "/nv-3.webp";
 const g5 = "/nv-5.webp";
@@ -53,21 +73,66 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { Icon: Ruler, img: "/nv-svc-1.webp", title: "Architecture & Design", desc: "Creative layouts, approved floor plans and construction drawings — a solid blueprint before ground breaking." },
-  { Icon: Building2, img: "/nv-svc-2.webp", title: "Residential & Commercial", desc: "Luxury homes, villas and commercial plazas built with top-grade materials all over Pakistan." },
-  { Icon: Layers, img: "/nv-svc-3.webp", title: "3D Front Elevations", desc: "Photo-realistic 3D elevations — see your project before it takes physical shape." },
-  { Icon: Hammer, img: "/nv-svc-4.webp", title: "Renovation & Upgrades", desc: "Give old buildings a modern transformation — inside and out, structural to finishing." },
-  { Icon: HardHat, img: "/nv-svc-5.webp", title: "Project Supervision", desc: "Full oversight from foundation to handover. Timeline control, budget discipline, quality assurance." },
-  { Icon: KeyRound, img: "/nv-svc-6.webp", title: "Turnkey Delivery", desc: "A complete design-to-handover package. You share the vision, we deliver the keys." },
+  {
+    Icon: Ruler,
+    img: "/nv-svc-1.webp",
+    title: "Architecture & Design",
+    desc: "Creative layouts, approved floor plans and construction drawings — a solid blueprint before ground breaking.",
+  },
+  {
+    Icon: Building2,
+    img: "/nv-svc-2.webp",
+    title: "Residential & Commercial",
+    desc: "Luxury homes, villas and commercial plazas built with top-grade materials all over Pakistan.",
+  },
+  {
+    Icon: Layers,
+    img: "/nv-svc-3.webp",
+    title: "3D Front Elevations",
+    desc: "Photo-realistic 3D elevations — see your project before it takes physical shape.",
+  },
+  {
+    Icon: Hammer,
+    img: "/nv-svc-4.webp",
+    title: "Renovation & Upgrades",
+    desc: "Give old buildings a modern transformation — inside and out, structural to finishing.",
+  },
+  {
+    Icon: HardHat,
+    img: "/nv-svc-5.webp",
+    title: "Project Supervision",
+    desc: "Full oversight from foundation to handover. Timeline control, budget discipline, quality assurance.",
+  },
+  {
+    Icon: KeyRound,
+    img: "/nv-svc-6.webp",
+    title: "Turnkey Delivery",
+    desc: "A complete design-to-handover package. You share the vision, we deliver the keys.",
+  },
 ];
 
 const whyUs = [
-  { title: "Nationwide Coverage", desc: "Serving clients all over Pakistan — one brand, trusted everywhere." },
-  { title: "3D Before Build", desc: "Approve your project in photo-real 3D before we break ground." },
+  {
+    title: "Nationwide Coverage",
+    desc: "Serving clients all over Pakistan — one brand, trusted everywhere.",
+  },
+  {
+    title: "3D Before Build",
+    desc: "Approve your project in photo-real 3D before we break ground.",
+  },
   { title: "Owner Supervision", desc: "Every site personally monitored by Adnan Javed Paracha." },
-  { title: "End-to-End Delivery", desc: "Design, construction and finishing — everything under one roof." },
-  { title: "Modern Architecture", desc: "Clean elevations, glass fronts, honest materials, luxury finishes." },
-  { title: "Transparent Timeline", desc: "Professional project management. No delays, no hidden charges." },
+  {
+    title: "End-to-End Delivery",
+    desc: "Design, construction and finishing — everything under one roof.",
+  },
+  {
+    title: "Modern Architecture",
+    desc: "Clean elevations, glass fronts, honest materials, luxury finishes.",
+  },
+  {
+    title: "Transparent Timeline",
+    desc: "Professional project management. No delays, no hidden charges.",
+  },
 ];
 
 const gallery = [
@@ -79,6 +144,43 @@ const gallery = [
   { src: g8, alt: "Custom designer kitchen with marble finishes" },
 ];
 
+const homeTestimonials = [
+  {
+    quote:
+      "The team translated our rough ideas into a stunning, build-ready design. Every milestone was clear and the finish quality exceeded expectations.",
+    name: "M. Farooq",
+    role: "Homeowner · DHA Lahore",
+    rating: 5,
+  },
+  {
+    quote:
+      "From the first 3D elevation to the final handover, we felt guided and informed. The site supervision made the whole process stress-free.",
+    name: "Ayesha & Bilal",
+    role: "Clients · Bahria Town Islamabad",
+    rating: 5,
+  },
+  {
+    quote:
+      "Their attention to detail and transparent communication gave us confidence from day one. The end result feels both luxurious and timeless.",
+    name: "Sana Karim",
+    role: "Homeowner · Gulberg Lahore",
+    rating: 5,
+  },
+  {
+    quote:
+      "Nuventure brought our commercial plaza to life exactly as promised. The structural integrity and finishing are truly world-class.",
+    name: "Omar Shahid",
+    role: "Investor · Faisal Town",
+    rating: 5,
+  },
+  {
+    quote:
+      "Adnan's personal involvement in our farmhouse project was a game changer. The modern design they proposed fits perfectly with nature.",
+    name: "Zainab Ali",
+    role: "Farmhouse · Multan",
+    rating: 5,
+  },
+];
 
 function Eyebrow({ children }: { children: string }) {
   return (
@@ -94,6 +196,7 @@ function Eyebrow({ children }: { children: string }) {
 function Index() {
   const [slide, setSlide] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
   useEffect(() => {
     const t = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 4500);
     return () => clearInterval(t);
@@ -112,7 +215,6 @@ function Index() {
       const p = v.play();
       if (p && typeof p.catch === "function") {
         p.catch(() => {
-          // Autoplay-with-sound blocked — stay muted, wait for interaction
           v.muted = true;
           v.play().catch(() => {});
         });
@@ -156,7 +258,6 @@ function Index() {
     };
   }, []);
 
-  // Per-card corner light: turn on when card scrolls into view
   useEffect(() => {
     const cards = document.querySelectorAll<HTMLElement>("[data-card-shine]");
     if (!cards.length) return;
@@ -194,13 +295,13 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
 
-        {/* Watermark */}
         <div className="absolute left-4 top-24 z-10 flex items-center gap-2 rounded-full bg-black/30 px-3 py-1.5 backdrop-blur-sm ring-1 ring-white/15 sm:left-6 sm:top-28">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/85">Nuventure</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/85">
+            Nuventure
+          </span>
         </div>
 
-        {/* Slide indicators */}
         <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2">
           {heroSlides.map((_, i) => (
             <button
@@ -213,7 +314,6 @@ function Index() {
             />
           ))}
         </div>
-
 
         <div className="relative mx-auto w-[min(1200px,calc(100%-2rem))] pt-32 pb-24 text-center sm:pt-40 sm:pb-32">
           {heroSlides.map((s, i) => (
@@ -241,17 +341,17 @@ function Index() {
             </div>
           ))}
 
-
+          {/* Unified Hero Buttons */}
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4 animate-hero-fade-up [animation-delay:460ms] opacity-0 [animation-fill-mode:forwards]">
             <Link
               to="/projects"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-4 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-colors hover:bg-accent/90"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
             >
               View Projects <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-4 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/10"
             >
               Request Consultation
             </Link>
@@ -287,13 +387,11 @@ function Index() {
       {/* Showcase Video */}
       <section className="mx-auto mt-20 w-[min(1200px,calc(100%-2rem))] sm:mt-28">
         <div className="group relative rounded-2xl p-[2px] sm:rounded-3xl">
-          {/* Animated gradient border glow */}
           <span
             aria-hidden
             className="pointer-events-none absolute -inset-[2px] rounded-2xl bg-[conic-gradient(from_0deg,transparent,hsl(var(--accent))/0.9,transparent_30%,transparent_60%,hsl(var(--accent))/0.9,transparent)] opacity-70 blur-[6px] transition-opacity duration-500 group-hover:opacity-100 sm:rounded-3xl animate-[spin_9s_linear_infinite]"
           />
           <div className="relative overflow-hidden rounded-2xl border border-accent/30 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.55),0_0_40px_-10px_hsl(var(--accent)/0.35)] sm:rounded-3xl">
-            {/* Corner light accents */}
             <span className="pointer-events-none absolute left-0 top-0 z-10 h-10 w-10 rounded-tl-2xl border-l-2 border-t-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-tl-3xl" />
             <span className="pointer-events-none absolute right-0 top-0 z-10 h-10 w-10 rounded-tr-2xl border-r-2 border-t-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-tr-3xl" />
             <span className="pointer-events-none absolute bottom-0 left-0 z-10 h-10 w-10 rounded-bl-2xl border-b-2 border-l-2 border-accent/70 shadow-[0_0_22px_hsl(var(--accent)/0.55)] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_32px_hsl(var(--accent)/0.9)] sm:h-14 sm:w-14 sm:rounded-bl-3xl" />
@@ -317,17 +415,17 @@ function Index() {
       {/* CEO Message */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="flex justify-center"><Eyebrow>From the Desk of the CEO</Eyebrow></div>
+          <div className="flex justify-center">
+            <Eyebrow>From the Desk of the CEO</Eyebrow>
+          </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             A message from
-            <span className="text-accent"> our founder.</span>
+            <span className="text-accent"> our CEO.</span>
           </h2>
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-14">
-          {/* Image with premium glow */}
           <div className="group relative mx-auto w-full max-w-md lg:mx-0">
-            {/* Ambient auto-glow */}
             <span
               aria-hidden
               className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.35),transparent_70%)] opacity-60 blur-2xl animate-pulse"
@@ -342,12 +440,10 @@ function Index() {
               className="[&.is-lit_.ceo-lite]:opacity-100 [&.is-lit_.ceo-lite]:scale-110 relative block w-full overflow-hidden rounded-[1.5rem] border border-accent/40 shadow-[0_25px_60px_-25px_rgba(0,0,0,0.55),0_0_40px_-10px_hsl(var(--accent)/0.4)] transition-all duration-500 hover:border-accent hover:shadow-[0_30px_70px_-25px_rgba(0,0,0,0.6),0_0_60px_-10px_hsl(var(--accent)/0.7)]"
               aria-label="Toggle spotlight on CEO photo"
             >
-              {/* Hover / click spotlight */}
               <span
                 aria-hidden
                 className="ceo-lite pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_50%_40%,hsl(var(--accent)/0.35),transparent_60%)] opacity-0 transition-all duration-700 group-hover:opacity-100"
               />
-              {/* Corner accents */}
               <span className="pointer-events-none absolute left-0 top-0 z-[3] h-10 w-10 rounded-tl-[1.5rem] border-l-2 border-t-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <span className="pointer-events-none absolute right-0 top-0 z-[3] h-10 w-10 rounded-tr-[1.5rem] border-r-2 border-t-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
               <span className="pointer-events-none absolute bottom-0 left-0 z-[3] h-10 w-10 rounded-bl-[1.5rem] border-b-2 border-l-2 border-accent/80 shadow-[0_0_22px_hsl(var(--accent)/0.6)]" />
@@ -361,32 +457,48 @@ function Index() {
                 style={{ imageRendering: "auto" }}
               />
             </button>
-            {/* Name plate */}
             <div className="relative z-[4] mx-auto mt-6 w-fit rounded-full border border-accent/40 bg-card/70 px-5 py-2 text-center shadow-[0_10px_30px_-15px_hsl(var(--accent)/0.5)] backdrop-blur">
-              <p className="text-sm font-semibold tracking-wide text-accent sm:text-base">Adnan Javed Paracha</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder & CEO</p>
+              <p className="text-sm font-semibold tracking-wide text-accent sm:text-base">
+                Adnan Javed Paracha
+              </p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">CEO</p>
             </div>
           </div>
 
-          {/* Message */}
           <article className="relative overflow-hidden rounded-2xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_25px_50px_-25px_rgba(0,0,0,0.35)] backdrop-blur-md sm:rounded-3xl sm:p-9 lg:p-10">
-            <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl" />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/15 blur-3xl"
+            />
             <div className="relative">
               <div className="text-6xl font-serif leading-none text-accent/60">“</div>
               <p className="mt-2 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                At Nuventure, we don't just construct buildings — we shape the spaces where families grow, businesses rise and legacies are built. For me, every project begins with a single question: <span className="italic text-foreground">would I be proud to hand these keys to my own family?</span> If the answer isn't an unhesitating yes, the work isn't finished.
+                At Nuventure, we don't just construct buildings — we shape the spaces where families
+                grow, businesses rise and legacies are built. For me, every project begins with a
+                single question:{" "}
+                <span className="italic text-foreground">
+                  would I be proud to hand these keys to my own family?
+                </span>{" "}
+                If the answer isn't an unhesitating yes, the work isn't finished.
               </p>
               <p className="mt-4 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                Over the years we have grown from a small, determined team into a trusted name across Pakistan — powered by architects, engineers and craftsmen who treat precision as a discipline and integrity as a standard. Timelines are honoured. Budgets are respected. Quality is never negotiated.
+                Over the years we have grown from a small, determined team into a trusted name
+                across Pakistan — powered by architects, engineers and craftsmen who treat precision
+                as a discipline and integrity as a standard. Timelines are honoured. Budgets are
+                respected. Quality is never negotiated.
               </p>
               <p className="mt-4 text-base leading-relaxed text-foreground/90 sm:text-lg">
-                When you choose Nuventure, you are not hiring a contractor — you are partnering with a team that will stand beside your vision from the first sketch to the final handover. That is my personal promise to every client who walks through our door.
+                When you choose Nuventure, you are not hiring a contractor — you are partnering with
+                a team that will stand beside your vision from the first sketch to the final
+                handover. That is my personal promise to every client who walks through our door.
               </p>
               <div className="mt-8 flex items-center gap-3">
                 <span className="h-px w-10 bg-accent/60" />
                 <div>
                   <p className="text-sm font-semibold text-accent">Adnan Javed Paracha</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder & CEO · Nuventure Constructions</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    CEO · Nuventure Constructions
+                  </p>
                 </div>
               </div>
             </div>
@@ -394,22 +506,39 @@ function Index() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="flex justify-center">
+            <Eyebrow>Client Stories</Eyebrow>
+          </div>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Trusted by homeowners who value{" "}
+            <span className="text-accent">clarity and craftsmanship.</span>
+          </h2>
+        </div>
+
+        <div className="mt-12">
+          <TestimonialCarousel items={homeTestimonials} variant="home" />
+        </div>
+      </section>
 
       {/* Build Your Legacy — Banner CTA */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="flex justify-center"><Eyebrow>Build Your Legacy</Eyebrow></div>
+          <div className="flex justify-center">
+            <Eyebrow>Build Your Legacy</Eyebrow>
+          </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            Don't just build a house —
-            <span className="text-accent"> build a legacy.</span>
+            Don't just build a house —<span className="text-accent"> build a legacy.</span>
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Premium quality, unmatched strength and modern design — engineered to stand strong for generations.
+            Premium quality, unmatched strength and modern design — engineered to stand strong for
+            generations.
           </p>
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-stretch">
-          {/* Poster */}
           <div className="group relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.55)]">
             <img
               src={legacyBanner}
@@ -420,18 +549,20 @@ function Index() {
             />
           </div>
 
-          {/* Highlights */}
           <div className="flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 sm:p-9">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 <Sparkles className="h-3.5 w-3.5" /> Grey Structure
               </div>
               <div className="mt-5 flex items-end gap-2">
-                <span className="text-5xl font-extrabold tracking-tight sm:text-6xl">Rs. 2,600</span>
+                <span className="text-5xl font-extrabold tracking-tight sm:text-6xl">
+                  Rs. 2,600
+                </span>
                 <span className="mb-2 text-sm font-medium text-muted-foreground">/ sq.ft</span>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                A transparent starting rate for premium-grade grey structure — no hidden costs, no compromises on material or workmanship.
+                A transparent starting rate for premium-grade grey structure — no hidden costs, no
+                compromises on material or workmanship.
               </p>
 
               <ul className="mt-6 space-y-3 text-sm sm:text-base">
@@ -452,18 +583,19 @@ function Index() {
               </ul>
             </div>
 
+            {/* Unified Legacy Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
               >
                 <Phone className="h-4 w-4" /> Talk about your dream home
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/50 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent/10"
+                className="inline-flex items-center justify-center gap-2 rounded-sm border border-accent/50 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-all hover:-translate-y-0.5 hover:bg-accent/10"
               >
                 Book a consultation <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -475,18 +607,21 @@ function Index() {
       {/* Grey Structure — Detailed Scope */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="flex justify-center"><Eyebrow>Grey Structure · Our Services</Eyebrow></div>
+          <div className="flex justify-center">
+            <Eyebrow>Grey Structure · Our Services</Eyebrow>
+          </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             Shape your dreams into reality
             <span className="text-accent"> with absolute trust.</span>
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Premium craftsmanship · solid grounding · built for generations. Every phase — from foundation excavation to the final roof — executed under strict quality control with industry-approved materials and specialist engineers.
+            Premium craftsmanship · solid grounding · built for generations. Every phase — from
+            foundation excavation to the final roof — executed under strict quality control with
+            industry-approved materials and specialist engineers.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          {/* Reference image */}
           <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-[0_25px_60px_-30px_rgba(0,0,0,0.55)] lg:sticky lg:top-24">
             <img
               src={greyStructureImg}
@@ -497,7 +632,6 @@ function Index() {
             />
           </div>
 
-          {/* Scope list */}
           <div className="rounded-3xl border border-border/70 bg-card/60 p-6 backdrop-blur sm:p-8">
             <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
               {[
@@ -537,22 +671,40 @@ function Index() {
 
             <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/5 p-5 sm:p-6">
               <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
-                Plans show intent. Renders prove experience. What truly matters is how everything comes together to shape the way you live — <span className="italic">zones, circulation, massing, façade rhythm, materials, landscape and lighting,</span> each decision crafted with purpose.
+                Plans show intent. Renders prove experience. What truly matters is how everything
+                comes together to shape the way you live —{" "}
+                <span className="italic">
+                  zones, circulation, massing, façade rhythm, materials, landscape and lighting,
+                </span>{" "}
+                each decision crafted with purpose.
               </p>
               <ul className="mt-5 grid gap-2 text-sm text-foreground/90 sm:grid-cols-2">
-                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Privacy exactly where you need it</li>
-                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Framed views that elevate daily living</li>
-                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Natural daylight flowing throughout</li>
-                <li className="flex items-start gap-2"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> A seamless, connected spatial experience</li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Privacy exactly where you
+                  need it
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Framed views that elevate
+                  daily living
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> Natural daylight flowing
+                  throughout
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-accent" /> A seamless, connected
+                  spatial experience
+                </li>
               </ul>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                A dedicated civil engineer is deployed to every project, with the wider Nuventure team supporting 24/7 — so the finished home feels refined, functional and truly personal from day one.
+                A dedicated civil engineer is deployed to every project, with the wider Nuventure
+                team supporting 24/7 — so the finished home feels refined, functional and truly
+                personal from day one.
               </p>
             </div>
           </div>
         </div>
       </section>
-
 
       <div className="mt-20 sm:mt-28">
         <MovingGallery />
@@ -561,13 +713,16 @@ function Index() {
       {/* Mission · Vision · Values */}
       <section className="mx-auto mt-24 w-[min(1200px,calc(100%-2rem))] sm:mt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="flex justify-center"><Eyebrow>Our Foundation</Eyebrow></div>
+          <div className="flex justify-center">
+            <Eyebrow>Our Foundation</Eyebrow>
+          </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             The principles that
             <span className="text-accent"> build every project.</span>
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            More than concrete and steel — Nuventure is built on a clear promise to our clients all over Pakistan.
+            More than concrete and steel — Nuventure is built on a clear promise to our clients all
+            over Pakistan.
           </p>
         </div>
 
@@ -578,34 +733,48 @@ function Index() {
               tag: "01 · Mission",
               title: "Deliver homes that outlast trends.",
               desc: "To engineer contemporary residences and commercial spaces that pair uncompromising build quality with a design language our clients are proud to call their own — on time, on budget, without shortcuts.",
-              points: ["Premium-grade materials only", "Transparent milestone-based pricing", "Owner-supervised site quality"],
+              points: [
+                "Premium-grade materials only",
+                "Transparent milestone-based pricing",
+                "Owner-supervised site quality",
+              ],
             },
             {
               Icon: Eye,
               tag: "02 · Vision",
               title: "Set a new standard for Pakistani construction.",
               desc: "To be the most trusted name in modern architecture all over Pakistan — where clients approve every façade, interior and finish in photo-real 3D long before ground is broken.",
-              points: ["3D-first design workflow", "Two-city delivery network", "Turnkey, one-team accountability"],
+              points: [
+                "3D-first design workflow",
+                "Two-city delivery network",
+                "Turnkey, one-team accountability",
+              ],
             },
             {
               Icon: Gem,
               tag: "03 · Values",
               title: "The standards we build into every wall.",
               desc: "Integrity guides our costing. Craftsmanship defines our finish. Respect shapes every conversation with the family whose home we are entrusted with.",
-              points: ["Integrity in every estimate", "Craftsmanship over speed", "Client-first communication"],
+              points: [
+                "Integrity in every estimate",
+                "Craftsmanship over speed",
+                "Client-first communication",
+              ],
             },
           ].map(({ Icon, tag, title, desc, points }) => (
             <article
               key={tag}
               className="group relative overflow-hidden rounded-2xl border border-border/70 bg-gradient-to-br from-card via-card to-secondary/40 p-7 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_25px_50px_-25px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_35px_60px_-25px_rgba(0,0,0,0.45),0_0_40px_-15px_hsl(var(--accent)/0.6)] sm:rounded-3xl sm:p-9"
             >
-              {/* Ambient corner glow */}
               <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/25 blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
               <div className="relative flex items-center justify-between">
                 <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 ring-1 ring-accent/30 transition-all duration-500 group-hover:bg-accent group-hover:ring-accent">
-                  <Icon className="h-7 w-7 text-accent transition-colors duration-500 group-hover:text-accent-foreground" strokeWidth={1.75} />
+                  <Icon
+                    className="h-7 w-7 text-accent transition-colors duration-500 group-hover:text-accent-foreground"
+                    strokeWidth={1.75}
+                  />
                 </div>
                 <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
                   {tag}
@@ -615,13 +784,14 @@ function Index() {
               <h3 className="relative mt-6 font-display text-xl font-bold leading-snug tracking-tight sm:text-2xl">
                 {title}
               </h3>
-              <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">
-                {desc}
-              </p>
+              <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">{desc}</p>
 
               <ul className="relative mt-6 space-y-2.5 border-t border-border/60 pt-5">
                 {points.map((p) => (
-                  <li key={p} className="flex items-start gap-2.5 text-[13px] leading-relaxed text-foreground/80">
+                  <li
+                    key={p}
+                    className="flex items-start gap-2.5 text-[13px] leading-relaxed text-foreground/80"
+                  >
                     <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent/15 ring-1 ring-accent/40">
                       <Check className="h-2.5 w-2.5 text-accent" strokeWidth={3} />
                     </span>
@@ -635,17 +805,18 @@ function Index() {
       </section>
 
       {/* Services */}
-
       <section className="mx-auto mt-28 w-[min(1200px,calc(100%-2rem))] p-6 sm:p-10">
         <div className="flex flex-wrap items-end justify-between gap-6 pb-10">
           <div>
             <Eyebrow>Our Services</Eyebrow>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               Everything from concept
-              <br className="hidden sm:block" /> <span className="italic font-normal text-accent">to handover.</span>
+              <br className="hidden sm:block" />{" "}
+              <span className="italic font-normal text-accent">to handover.</span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Six disciplines. One accountable studio. From the first sketch to the final key — every stage engineered with the precision of a boutique atelier.
+              Six disciplines. One accountable studio. From the first sketch to the final key —
+              every stage engineered with the precision of a boutique atelier.
             </p>
           </div>
           <Link
@@ -657,17 +828,15 @@ function Index() {
           </Link>
         </div>
 
-        {/* Editorial bento grid */}
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto]">
           {services.map(({ Icon, img, title, desc }, idx) => {
-            // Bento layout classes per index
             const layout = [
-              "lg:col-span-7 lg:row-span-2", // 01 featured tall
-              "lg:col-span-5",                 // 02
-              "lg:col-span-5",                 // 03
-              "lg:col-span-4",                 // 04
-              "lg:col-span-4",                 // 05
-              "lg:col-span-4",                 // 06
+              "lg:col-span-7 lg:row-span-2",
+              "lg:col-span-5",
+              "lg:col-span-5",
+              "lg:col-span-4",
+              "lg:col-span-4",
+              "lg:col-span-4",
             ][idx];
             const isFeatured = idx === 0;
             const num = String(idx + 1).padStart(2, "0");
@@ -677,8 +846,9 @@ function Index() {
                 key={title}
                 className={`group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-border/70 bg-background transition-all duration-700 hover:-translate-y-1 hover:border-accent/50 ${layout}`}
               >
-                {/* Image */}
-                <div className={`relative overflow-hidden ${isFeatured ? "aspect-[4/5] lg:aspect-auto lg:flex-1" : "aspect-[16/10]"}`}>
+                <div
+                  className={`relative overflow-hidden ${isFeatured ? "aspect-[4/5] lg:aspect-auto lg:flex-1" : "aspect-[16/10]"}`}
+                >
                   <img
                     src={img}
                     alt={title}
@@ -686,49 +856,51 @@ function Index() {
                     decoding="async"
                     className="h-full w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   />
-                  {/* Duotone wash */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent" />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-accent/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-
-
-
-                  {/* Icon chip */}
                   <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-background/90 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.35)] ring-1 ring-accent/25 backdrop-blur-md">
                     <Icon className="h-5 w-5 text-accent" strokeWidth={1.9} />
                   </div>
 
-                  {/* Watermark */}
                   <div className="absolute left-5 top-5 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1 backdrop-blur-sm ring-1 ring-white/15">
                     <span className="h-1 w-1 rounded-full bg-accent" />
-                    <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/90">Nuventure</span>
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/90">
+                      Nuventure
+                    </span>
                   </div>
 
-                  {/* Featured overlay title */}
                   {isFeatured && (
                     <div className="absolute inset-x-0 bottom-0 p-7 text-primary-foreground">
                       <div className="mb-3 flex items-center gap-3">
                         <span className="font-serif text-4xl italic text-accent">{num}</span>
                         <span className="h-px flex-1 bg-accent/40" />
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-accent/80">Featured</span>
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-accent/80">
+                          Featured
+                        </span>
                       </div>
                       <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">{title}</h3>
-                      <p className="mt-3 max-w-md text-sm leading-relaxed text-primary-foreground/85">{desc}</p>
+                      <p className="mt-3 max-w-md text-sm leading-relaxed text-primary-foreground/85">
+                        {desc}
+                      </p>
                       <div className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                        <span className="border-b border-accent/60 pb-1 transition-colors group-hover:border-accent">Discover</span>
+                        <span className="border-b border-accent/60 pb-1 transition-colors group-hover:border-accent">
+                          Discover
+                        </span>
                         <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
                   )}
                 </div>
 
-                {/* Body (non-featured) */}
                 {!isFeatured && (
                   <div className="relative flex flex-1 flex-col gap-3 p-6">
                     <div className="flex items-center gap-3">
                       <span className="font-serif text-2xl italic text-accent">{num}</span>
                       <span className="h-px flex-1 bg-border" />
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">Service</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
+                        Service
+                      </span>
                     </div>
                     <h3 className="text-lg font-semibold tracking-tight sm:text-xl">{title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{desc}</p>
@@ -762,7 +934,8 @@ function Index() {
           <div>
             <Eyebrow>Signature Work</Eyebrow>
             <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Modern homes,<br className="hidden sm:block" /> 3D elevations &amp; more.
+              Modern homes,
+              <br className="hidden sm:block" /> 3D elevations &amp; more.
             </h2>
           </div>
           <Link
@@ -784,7 +957,9 @@ function Index() {
               />
               <div className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 backdrop-blur-sm ring-1 ring-white/15">
                 <span className="h-1 w-1 rounded-full bg-accent" />
-                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/90">Nuventure</span>
+                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/90">
+                  Nuventure
+                </span>
               </div>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <figcaption className="absolute inset-x-0 bottom-0 translate-y-2 p-5 text-primary-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
@@ -794,7 +969,6 @@ function Index() {
           ))}
         </div>
       </section>
-
 
       {/* CTA */}
       <section className="shine-box mx-auto mt-28 w-[min(1200px,calc(100%-2rem))] p-6 sm:p-10">
@@ -806,8 +980,8 @@ function Index() {
                 Ready to build your dream home?
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-                Book a free consultation and visualise your project in photo-real 3D before we
-                break ground. No obligations, no pressure — just clear answers.
+                Book a free consultation and visualise your project in photo-real 3D before we break
+                ground. No obligations, no pressure — just clear answers.
               </p>
             </div>
             <div className="lg:col-span-5 lg:pl-10 lg:border-l lg:border-primary-foreground/15">
@@ -821,18 +995,20 @@ function Index() {
                   0328 4734463 · Mon – Sat, 10 AM to 7 PM
                 </li>
               </ul>
+
+              {/* Unified Final CTA Buttons */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={WHATSAPP}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-colors hover:bg-accent/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-accent-foreground shadow-[0_15px_35px_-10px_hsl(var(--accent)/0.6)] transition-all hover:-translate-y-0.5 hover:bg-accent/90"
                 >
                   WhatsApp Now
                 </a>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider transition-colors hover:bg-primary-foreground/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/10"
                 >
                   Contact Adnan
                 </Link>

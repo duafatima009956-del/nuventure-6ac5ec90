@@ -94,7 +94,9 @@ export function OngoingProjects() {
         <div>
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-accent" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">In Progress</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-accent">
+              In Progress
+            </span>
           </div>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
             Ongoing <span className="text-accent">Projects</span>
@@ -137,8 +139,18 @@ export function OngoingProjects() {
             />
             <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             <div className="pointer-events-none absolute left-2 top-2 flex items-center gap-1.5 rounded-md bg-background/85 px-2 py-1 shadow-md backdrop-blur-sm">
-              <img src={logo} alt="" aria-hidden="true" loading="lazy" decoding="async" draggable={false} className="h-5 w-5 object-contain" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-accent">Nuventure</span>
+              <img
+                src={logo}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="h-5 w-5 object-contain"
+              />
+              <span className="text-[9px] font-black uppercase tracking-widest text-accent">
+                Nuventure
+              </span>
             </div>
             <div className="pointer-events-none absolute right-2 top-2 rounded-md bg-accent/90 px-2 py-1 text-[9px] font-black uppercase tracking-widest text-accent-foreground shadow-md">
               Ongoing
@@ -154,26 +166,38 @@ export function OngoingProjects() {
         >
           <button
             aria-label="Close"
-            onClick={(e) => { e.stopPropagation(); setLightbox(null); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox(null);
+            }}
             className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <X className="h-5 w-5" />
           </button>
           <button
             aria-label="Previous"
-            onClick={(e) => { e.stopPropagation(); nav(-1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nav(-1);
+            }}
             className="absolute left-2 sm:left-6 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             aria-label="Next"
-            onClick={(e) => { e.stopPropagation(); nav(1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nav(1);
+            }}
             className="absolute right-2 sm:right-6 rounded-full border border-white/30 bg-black/50 p-2 text-white transition hover:border-accent hover:text-accent"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
-          <div className="relative max-h-[85vh] w-[min(1100px,95vw)]" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-h-[85vh] w-[min(1100px,95vw)]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={images[lightbox].src}
               alt={images[lightbox].alt}

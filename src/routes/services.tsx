@@ -40,7 +40,11 @@ const services = [
     img: "/nv-svc-1.webp",
     title: "Architecture & Design",
     desc: "Creative floor plans, working drawings and structural design approved by qualified engineers.",
-    points: ["Concept & schematic design", "Approved municipal drawings", "Structural & MEP layouts"],
+    points: [
+      "Concept & schematic design",
+      "Approved municipal drawings",
+      "Structural & MEP layouts",
+    ],
   },
   {
     Icon: Layers,
@@ -126,11 +130,31 @@ const packages = [
 ];
 
 const process = [
-  { step: "01", title: "Consultation", desc: "Free site visit, plot analysis and requirement gathering." },
-  { step: "02", title: "Design & 3D", desc: "Floor plans and HD 3D elevations approved before construction." },
-  { step: "03", title: "Contract", desc: "Transparent BOQ, fixed timeline and milestone payments." },
-  { step: "04", title: "Construction", desc: "Owner-supervised build with weekly updates and quality checks." },
-  { step: "05", title: "Handover", desc: "Snag-free delivery with post-handover support & warranty." },
+  {
+    step: "01",
+    title: "Consultation",
+    desc: "Free site visit, plot analysis and requirement gathering.",
+  },
+  {
+    step: "02",
+    title: "Design & 3D",
+    desc: "Floor plans and HD 3D elevations approved before construction.",
+  },
+  {
+    step: "03",
+    title: "Contract",
+    desc: "Transparent BOQ, fixed timeline and milestone payments.",
+  },
+  {
+    step: "04",
+    title: "Construction",
+    desc: "Owner-supervised build with weekly updates and quality checks.",
+  },
+  {
+    step: "05",
+    title: "Handover",
+    desc: "Snag-free delivery with post-handover support & warranty.",
+  },
 ];
 
 function ServicesPage() {
@@ -147,9 +171,9 @@ function ServicesPage() {
             One team. <span className="text-accent">Every stage of your build.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            From the first sketch to the final key — Nuventure Constructions handles
-            architecture, 3D visualization, grey structure, finishing, interiors and
-            handover under one accountable roof.
+            From the first sketch to the final key — Nuventure Constructions handles architecture,
+            3D visualization, grey structure, finishing, interiors and handover under one
+            accountable roof.
           </p>
         </div>
       </section>
@@ -163,7 +187,13 @@ function ServicesPage() {
               className="shine-box group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/60 hover:shadow-2xl hover:shadow-accent/10"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={img} alt={title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img
+                  src={img}
+                  alt={title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-accent/50 bg-background/80 text-accent backdrop-blur">
                   <Icon className="h-5 w-5" />
@@ -190,7 +220,9 @@ function ServicesPage() {
       <section className="border-y border-border/60 bg-secondary/30 py-16 sm:py-20">
         <div className="mx-auto w-[min(1100px,calc(100%-2rem))]">
           <div className="text-center">
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Construction Packages</span>
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
+              Construction Packages
+            </span>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">Choose the right build for you</h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
               Both packages use A++ verified materials — the difference is how far we take it.
@@ -201,7 +233,9 @@ function ServicesPage() {
               <div
                 key={p.name}
                 className={`relative overflow-hidden rounded-2xl border p-8 shadow-lg ${
-                  p.highlight ? "border-accent bg-gradient-to-br shadow-accent/20" : "border-border bg-card"
+                  p.highlight
+                    ? "border-accent bg-gradient-to-br shadow-accent/20"
+                    : "border-border bg-card"
                 } bg-gradient-to-br ${p.color}`}
               >
                 {p.highlight && (
@@ -237,7 +271,9 @@ function ServicesPage() {
       {/* Process */}
       <section className="mx-auto w-[min(1200px,calc(100%-2rem))] py-16 sm:py-24">
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">How We Work</span>
+          <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">
+            How We Work
+          </span>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">A proven 5-step process</h2>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -259,10 +295,18 @@ function ServicesPage() {
             Free consultation · Instant cost estimate · HD 3D preview before we break ground.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-bold text-accent-foreground shadow-lg shadow-accent/40 transition-transform hover:scale-[1.02]"
+            >
               Get Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3 text-sm font-bold text-accent hover:bg-accent/10">
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-7 py-3 text-sm font-bold text-accent hover:bg-accent/10"
+            >
               💬 WhatsApp Us
             </a>
           </div>

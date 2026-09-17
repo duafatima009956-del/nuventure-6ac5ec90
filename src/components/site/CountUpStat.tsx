@@ -10,9 +10,7 @@ function parseCountValue(value: string) {
   return {
     target: Number.parseInt(match[1], 10),
     template:
-      value.slice(0, match.index) +
-      "__N__" +
-      value.slice((match.index ?? 0) + match[1].length),
+      value.slice(0, match.index) + "__N__" + value.slice((match.index ?? 0) + match[1].length),
     hasNumber: true,
   };
 }

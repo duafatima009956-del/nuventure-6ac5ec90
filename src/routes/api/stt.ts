@@ -30,14 +30,11 @@ export const Route = createFileRoute("/api/stt")({
                   : "webm";
         upstream.append("file", file, `recording.${ext}`);
 
-        const res = await fetch(
-          "https://ai.gateway.lovable.dev/v1/audio/transcriptions",
-          {
-            method: "POST",
-            headers: { Authorization: `Bearer ${key}` },
-            body: upstream,
-          },
-        );
+        const res = await fetch("https://ai.gateway.lovable.dev/v1/audio/transcriptions", {
+          method: "POST",
+          headers: { Authorization: `Bearer ${key}` },
+          body: upstream,
+        });
 
         const body = await res.text();
         return new Response(body, {

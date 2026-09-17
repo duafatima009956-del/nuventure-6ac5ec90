@@ -46,7 +46,9 @@ export function VoiceBot() {
         : MediaRecorder.isTypeSupported("audio/mp4")
           ? "audio/mp4"
           : "";
-      const recorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      const recorder = mime
+        ? new MediaRecorder(stream, { mimeType: mime })
+        : new MediaRecorder(stream);
       recorderRef.current = recorder;
       chunksRef.current = [];
       recorder.ondataavailable = (e) => {
@@ -247,7 +249,10 @@ export function VoiceBot() {
                   </p>
                 )}
                 {history.slice(-6).map((t, i) => (
-                  <div key={i} className={t.role === "user" ? "text-foreground" : "text-muted-foreground"}>
+                  <div
+                    key={i}
+                    className={t.role === "user" ? "text-foreground" : "text-muted-foreground"}
+                  >
                     <span className="mr-2 text-[10px] font-black uppercase tracking-widest text-accent">
                       {t.role === "user" ? "You" : "AI"}
                     </span>
@@ -256,9 +261,7 @@ export function VoiceBot() {
                 ))}
               </div>
 
-              {error && (
-                <p className="text-xs text-destructive">{error}</p>
-              )}
+              {error && <p className="text-xs text-destructive">{error}</p>}
 
               <div className="flex w-full items-center justify-center">
                 {status === "listening" ? (
@@ -274,7 +277,8 @@ export function VoiceBot() {
                     disabled={status === "thinking" || status === "speaking"}
                     className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:scale-105 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    <Mic className="h-4 w-4" /> {history.length === 0 ? "Start Talking" : "Speak again"}
+                    <Mic className="h-4 w-4" />{" "}
+                    {history.length === 0 ? "Start Talking" : "Speak again"}
                   </button>
                 )}
               </div>

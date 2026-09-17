@@ -2,11 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, MessageCircle, Phone, X } from "lucide-react";
 
-
 const logo = "/nuventure-logo-visible.webp";
 const WHATSAPP = "https://wa.me/923284734463";
-
-
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -22,7 +19,6 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex w-[min(1200px,calc(100%-2rem))] items-center justify-between py-4">
-
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
             src={logo}
